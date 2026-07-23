@@ -13,9 +13,82 @@
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', function () { nav.classList.toggle('open'); });
     nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { nav.classList.remove('open'); });
+      a.addEventListener('click', function (ev) {
+        // Section headings with panels: on mobile they toggle their accordion
+        // instead of navigating/closing; placeholder "#" links never navigate.
+        if (a.classList.contains('has-panel')) {
+          var isMobile = window.matchMedia('(max-width:900px)').matches;
+          if (isMobile || a.getAttribute('href') === '#') {
+            ev.preventDefault();
+            if (isMobile) {
+              var ni = a.closest('.ni');
+              if (ni) ni.classList.toggle('open');
+            }
+            return;
+          }
+        }
+        nav.classList.remove('open');
+      });
     });
   }
+
+  // Active nav link — derived from the URL so headers stay copy-paste
+  // identical across pages (no hand-placed `active` class needed).
+  if (nav) {
+    var here = location.pathname.split('/').pop() || 'index.html';
+    nav.querySelectorAll('a.nl, .mega a').forEach(function (a) {
+      var href = (a.getAttribute('href') || '').split('#')[0];
+      if (!href || href === '#') return;
+      if (href === here) {
+        a.classList.add('active');
+        var ni = a.closest('.ni');
+        var top = ni && ni.querySelector('a.nl');
+        if (top) top.classList.add('active');
+      }
+    });
+  }
+
+  // CA/NV picker — the primary Contact CTA (.js-contact-cta) asks which
+  // state the building is in before routing to the contact form.
+  // Progressive enhancement: with no JS the CTA is a plain contact.html link.
+  document.addEventListener('click', function (ev) {
+    if (!ev.target || !ev.target.closest) return;
+    var cta = ev.target.closest('.js-contact-cta');
+    if (!cta) return;
+    ev.preventDefault();
+    if (document.querySelector('.picker-overlay')) return;
+    var overlay = document.createElement('div');
+    overlay.className = 'picker-overlay';
+    overlay.innerHTML =
+      '<div class="picker" role="dialog" aria-modal="true" aria-label="Choose your state">' +
+      '<h3>Where is your building?</h3>' +
+      '<p>We&#39;re licensed and crewed in both states — this routes your request to the right team.</p>' +
+      '<div class="opts">' +
+      '<a href="contact.html?region=ca"><b>California</b><span>CA #1119594 &middot; CA #732770</span></a>' +
+      '<a href="contact.html?region=nv"><b>Nevada</b><span>NV #0042603</span></a>' +
+      '</div>' +
+      '<a class="alt" href="contact.html">Somewhere else / not sure</a>' +
+      '</div>';
+    var close = function () {
+      overlay.classList.remove('show');
+      setTimeout(function () { overlay.remove(); }, 250);
+      document.removeEventListener('keydown', onKey);
+    };
+    var onKey = function (e) { if (e.key === 'Escape') close(); };
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', onKey);
+    document.body.appendChild(overlay);
+    requestAnimationFrame(function () { overlay.classList.add('show'); });
+  });
+
+  // contact.html region handling: ?region=ca|nv preselects the building
+  // location and shows the matching license line. Safe no-op elsewhere.
+  (function () {
+    var regionSel = document.getElementById('region');
+    if (!regionSel) return;
+    var match = /[?&]region=(ca|nv)/.exec(location.search);
+    if (match) regionSel.value = match[1] === 'ca' ? 'California' : 'Nevada';
+  })();
 
   // Scroll reveal
   var io = new IntersectionObserver(function (entries) {
