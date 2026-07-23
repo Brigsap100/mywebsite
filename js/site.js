@@ -169,8 +169,13 @@
     });
   }
 
-  // Contact form → CRM lead intake
+  // Contact form → CRM lead intake.
+  // Building location is folded into `message` as a labeled line — the
+  // payload keys are a fixed contract with the API/CRM, never add keys.
   wireLeadForm('quoteForm', 'formNote', function () {
+    var region = val('region');
+    var message = val('message');
+    if (region) message = 'Region: ' + region + '\n\n' + message;
     return {
       source: 'website-contact',
       name: val('name'),
@@ -179,7 +184,7 @@
       phone: val('phone'),
       service: val('service'),
       position: '',
-      message: val('message')
+      message: message
     };
   });
 
