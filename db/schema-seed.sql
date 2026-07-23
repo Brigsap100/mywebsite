@@ -17,6 +17,7 @@ DROP TABLE IF EXISTS dbo.Projects;
 DROP TABLE IF EXISTS dbo.Opportunities;
 DROP TABLE IF EXISTS dbo.Accounts;
 DROP TABLE IF EXISTS dbo.Leads;   -- no FK dependents; order flexible
+DROP TABLE IF EXISTS dbo.SiteContent;   -- public-site content overrides; no FK dependents
 GO
 
 -- ---- Create parents before children ------------------------------------
@@ -306,4 +307,72 @@ INSERT INTO dbo.WorkOrders (Number, AccountId, RoofAssetId, ContractId, Type, Pr
  (N'WO-2026-114', 11,   12,   7,    N'Preventative Maintenance', N'Standard',  N'scheduled',   N'Semi-annual contract visit — Tech Center North: drains, seams, rooftop housekeeping.',             NULL,                                          '2026-07-16T08:00:00', '2026-07-28', NULL,                  N'Omar Sissoko',   NULL,     NULL,           NULL,                                                                                    0, 0, NULL, NULL),
  (N'WO-2026-115', 2,    3,    NULL, N'Repair',                   N'Standard',  N'new',         N'Replace damaged walk pads and re-secure lightning protection cable, upper bowl.',                  NULL,                                          '2026-07-19T10:05:00', NULL,         NULL,                  NULL,              9000.00,  N'PO-SKG-3319', NULL,                                                                                    0, 0, NULL, NULL),
  (N'WO-2026-116', NULL, NULL, NULL, N'Leak Call',                N'Standard',  N'new',         N'Water coming through ceiling tiles in our back office after sprinkler testing on the roof.' + NCHAR(10) + NCHAR(10) + N'Reported by: Tina Alvarez · 916-555-0472 · talvarez@example.com' + NCHAR(10) + N'Building: Riverside Office Annex', N'Back office, above copy room', '2026-07-21T16:50:00', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL);
+GO
+
+-- ---- SiteContent: public-site editable values ---------------------------------
+-- Served by GET /api/site-content; the public pages ship with baked-in filler
+-- in <span data-content="key"> slots and js/site-data.js swaps in these values.
+-- FILLER VALUES BELOW ARE UNCONFIRMED — replace with real numbers before
+-- relying on them publicly (they mirror what is baked into the HTML today).
+CREATE TABLE dbo.SiteContent (
+    ContentKey   NVARCHAR(100) PRIMARY KEY,
+    ContentValue NVARCHAR(400) NOT NULL,
+    UpdatedAt    DATETIME2     NOT NULL DEFAULT SYSUTCDATETIME()
+);
+GO
+
+INSERT INTO dbo.SiteContent (ContentKey, ContentValue) VALUES
+ (N'emergency.slaHours',        N'4'),
+ (N'safety.emr',                N'0.75'),
+ (N'safety.trainingHours',      N'2,500+'),
+ (N'careers.tenurePct',         N'70'),
+ (N'careers.pay.foreman',       N'$38–$52/hr'),
+ (N'careers.pay.technician',    N'$24–$38/hr'),
+ (N'careers.pay.waterproofing', N'$26–$40/hr'),
+ (N'careers.pay.estimator',     N'$85k–$120k'),
+ (N'careers.pay.projectManager',N'$95k–$130k'),
+ (N'careers.pay.sales',         N'$70k–$90k + commission'),
+ (N'careers.responseDays',      N'3'),
+ (N'careers.match401k',         N'4'),
+ (N'careers.bootAllowance',     N'$300/yr'),
+ (N'careers.referralBonus',     N'$1,000'),
+ (N'areas.ca1', N'Sacramento & the Capital Region'),
+ (N'areas.ca2', N'San Francisco Bay Area'),
+ (N'areas.ca3', N'Central Valley — Stockton to Fresno'),
+ (N'areas.ca4', N'North State — Chico & Redding'),
+ (N'areas.nv1', N'Reno–Sparks'),
+ (N'areas.nv2', N'Carson City'),
+ (N'areas.nv3', N'Lake Tahoe & Truckee'),
+ (N'areas.nv4', N'Northern Nevada industrial corridor'),
+ (N'cert1.name', N'GAF'),
+ (N'cert1.desc', N'Certified installer for GAF low-slope commercial systems.'),
+ (N'cert2.name', N'Carlisle SynTec'),
+ (N'cert2.desc', N'Authorized applicator for Carlisle single-ply membrane systems.'),
+ (N'cert3.name', N'Johns Manville'),
+ (N'cert3.desc', N'Approved contractor for JM commercial roofing systems.'),
+ (N'cert4.name', N'Sika Sarnafil'),
+ (N'cert4.desc', N'Authorized applicator for Sarnafil thermoplastic systems.'),
+ (N'cert5.name', N'Tremco'),
+ (N'cert5.desc', N'Approved contractor for Tremco roofing and weatherproofing.'),
+ (N'cert6.name', N'Versico'),
+ (N'cert6.desc', N'Authorized installer for Versico single-ply systems.'),
+ (N'award1.name', N'NRCA Member'),
+ (N'award1.desc', N'National Roofing Contractors Association — member in good standing.'),
+ (N'award2.name', N'Western States RCA'),
+ (N'award2.desc', N'Western States Roofing Contractors Association — member.'),
+ (N'award3.name', N'Safety Excellence Recognition'),
+ (N'award3.desc', N'Regional recognition for jobsite safety performance.'),
+ (N'partner1.name', N'GAF'),
+ (N'partner1.desc', N'Single-ply and low-slope commercial systems.'),
+ (N'partner2.name', N'Carlisle SynTec'),
+ (N'partner2.desc', N'TPO and EPDM membrane systems.'),
+ (N'partner3.name', N'Johns Manville'),
+ (N'partner3.desc', N'Single-ply, BUR, and insulation systems.'),
+ (N'partner4.name', N'Sika Sarnafil'),
+ (N'partner4.desc', N'Thermoplastic membrane and waterproofing systems.'),
+ (N'partner5.name', N'Tremco'),
+ (N'partner5.desc', N'Restoration coatings and weatherproofing.'),
+ (N'partner6.name', N'Versico'),
+ (N'partner6.desc', N'Single-ply membrane systems.'),
+ (N'privacy.effectiveDate', N'July 1, 2026');
 GO

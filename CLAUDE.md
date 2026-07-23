@@ -71,6 +71,8 @@ Form → CRM intake payloads (fixed contracts; fold new data into `message`/`pro
 - `POST /api/lead` `{source, name, company, email, phone, service, position, message}` — sources: `website-contact`, `careers-application` (careers screening answers are labeled lines inside `message`; Spanish form prefixes `[ES] `). Lands in `dbo.Leads` → CRM Leads page.
 - `POST /api/service-request` `{company, name, phone, email, building, leakLocation, problem, emergency, urgent}` → `dbo.WorkOrders` (Type/Priority derived from emergency/urgent) → CRM Work Orders.
 
+Site content overrides (public pages): editable values (stats, pay ranges, service cities, certifications/partners, SLA hours…) are wrapped as `<span data-content="key">filler</span>` in the HTML. `js/site-data.js` (included only on pages that have slots, after `js/site.js`) fetches `GET /api/site-content` (4s timeout) and swaps in `{value:[{key,value}]}` rows from `dbo.SiteContent`; on GitHub Pages or any failure the baked-in filler stays. To change a value everywhere: update the row in `dbo.SiteContent` (live) AND the baked filler in the HTML (static fallback). The baked fillers are plausible but UNCONFIRMED business numbers — confirm with the owner before treating them as fact; keys live in `db/schema-seed.sql` seed block.
+
 API code style: one `module.exports = async function (context, req)` per function dir, cached `mssql` pool, **parameterized inputs only**, always set `context.res` on every path.
 
 ## Content rules
