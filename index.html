@@ -7,48 +7,16 @@
 <meta name="description" content="California & Nevada's commercial roofing and waterproofing experts. Over 35 years adding extraordinary value to buildings and lives. Re-roofing, waterproofing, metal systems, and 24/7 emergency leak repair.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
 <link rel="icon" href="assets/img/logo-seal.png">
 </head>
 <body>
 
-<!-- INTRO SPLASH -->
-<div id="splash">
-  <img class="seal" src="assets/img/logo-seal.png" alt="Kodiak Roofing & Waterproofing — 35th Anniversary">
-  <div class="cap">Adding extraordinary value to buildings and lives</div>
-</div>
-<script>
-  (function () {
-    var splash = document.getElementById('splash');
-    if (!splash) return;
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Play once per browser session so navigating back home doesn't replay it.
-    if (sessionStorage.getItem('kodiakIntro') || reduce) { splash.parentNode.removeChild(splash); return; }
-    document.body.classList.add('splash-lock', 'intro-active');
-    var done = function () {
-      if (splash.dataset.done) return; splash.dataset.done = '1';
-      // Crossfade: splash fades out while the site content fades in together.
-      document.body.classList.remove('intro-active');
-      document.body.classList.add('intro-fade');
-      splash.classList.add('hide');
-      document.body.classList.remove('splash-lock');
-      sessionStorage.setItem('kodiakIntro', '1');
-      setTimeout(function () {
-        if (splash.parentNode) splash.parentNode.removeChild(splash);
-        document.body.classList.remove('intro-fade');
-      }, 1500);
-    };
-    // Hold the seal ~2.4s, then crossfade to the site. Fallback if 'load' is slow.
-    window.addEventListener('load', function () { setTimeout(done, 2400); });
-    setTimeout(done, 4500);
-  })();
-</script>
-
 <!-- NAV:BEGIN (shared header - edit once, stamp into every root page; see REDESIGN-PLAN.md) -->
 <header class="site" id="hdr">
   <div class="wrap">
-    <a href="index.html" class="brand"><img src="assets/img/logo.png" alt="Kodiak Roofing &amp; Waterproofing"></a>
+    <a href="index.html" class="brand"><img src="assets/img/seal-2027.png" alt="Kodiak Roofing &amp; Waterproofing"></a>
     <nav class="main" id="nav">
       <span class="ni">
         <a class="nl has-panel" href="services.html">Services</a>
@@ -125,136 +93,170 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="bg" style="background-image:url('assets/img/proj-carson.jpg');"></div>
-  <div class="glow g-red"></div><div class="glow g-gold"></div>
+  <div class="bg" style="background-image:url('assets/img/hero-drone.jpg');"></div>
   <div class="wrap">
-    <div class="hero-inner">
-      <div class="eyebrow">Commercial Roofing &amp; Waterproofing · California &amp; Nevada</div>
-      <h1 style="margin-top:20px;">California &amp; Nevada's commercial roofing &amp; <span class="gold">waterproofing</span> experts.</h1>
-      <p class="lead">Adding extraordinary value to buildings and lives. For over 35 years, we've protected the West's most demanding commercial properties — from tech campuses to hospitals and arenas.</p>
+    <div class="hero-panel reveal">
+      <h1>Commercial Roofing Company Delivering Long-Term Roof Performance</h1>
+      <p>For 35 years, Kodiak Roofing &amp; Waterproofing has stood as the commercial roofing company property owners and general contractors trust with their most demanding buildings.</p>
       <div class="act">
-        <a href="contact.html" class="btn btn-red">Request a Quote</a>
-        <a href="services.html" class="btn btn-ghost">Explore Services</a>
-      </div>
-      <div class="badges">
-        <div class="b"><b>35+</b><span>Years in business</span></div>
-        <div class="b"><b>24/7</b><span>Emergency response</span></div>
-        <div class="b"><b>2</b><span>States served</span></div>
+        <a class="btn btn-ghost" href="contact.html">Get a Free Roof Evaluation</a>
+        <a class="btn btn-red js-contact-cta" href="contact.html">Request a Quote</a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="strip"><div class="track">
-  Re-Roofing <b>/</b> Waterproofing <b>/</b> Metal Systems <b>/</b> Leak Repair <b>/</b> Roof Life Extension <b>/</b> Maintenance <b>/</b>
-  Re-Roofing <b>/</b> Waterproofing <b>/</b> Metal Systems <b>/</b> Leak Repair <b>/</b> Roof Life Extension <b>/</b> Maintenance <b>/</b>
-</div></div>
-
-<!-- SERVICES OVERVIEW -->
+<!-- SERVICES WE PROVIDE -->
 <section id="services">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow red">What we do</div>
-      <h2>Full-service commercial roofing</h2>
-      <p>From new installations to keeping an aging roof watertight, we handle every stage of a commercial roof's life.</p>
+      <h2>Services We Provide</h2>
+      <p>As a commercial roofing company, Kodiak begins every engagement with a candid assessment of what your building actually requires.</p>
     </div>
     <div class="svc-grid">
-      <div class="svc reveal"><span class="num">01</span><h3>New Construction</h3><p>Ground-up commercial roofing installed to spec, on schedule, alongside your GC and design team.</p><a class="more" href="service-commercial-roofing.html">Learn more →</a></div>
-      <div class="svc reveal"><span class="num">02</span><h3>Commercial Re-Roofing</h3><p>Full tear-off and replacement systems engineered for large-format commercial and industrial buildings.</p><a class="more" href="service-reroofing.html">Learn more →</a></div>
-      <div class="svc reveal"><span class="num">03</span><h3>Preventative Maintenance</h3><p>Scheduled inspection and repair programs that extend roof life and protect your warranty.</p><a class="more" href="service-maintenance.html">Learn more →</a></div>
-      <div class="svc reveal"><span class="num">04</span><h3>24/7 Emergency Leak Repair</h3><p>For the leaks that keep you up at night — around-the-clock crews ready to secure your building.</p><a class="more" href="service-emergency.html">Learn more →</a></div>
-      <div class="svc reveal"><span class="num">05</span><h3>Roof Inspections</h3><p>Documented condition reports with photos and prioritized recommendations — see problems before they spread.</p><a class="more" href="service-roof-inspections.html">Learn more →</a></div>
-      <div class="svc reveal"><span class="num">06</span><h3>Commercial Waterproofing</h3><p>Deck coatings, sealants, and membrane systems that stop water before it reaches the structure.</p><a class="more" href="service-waterproofing.html">Learn more →</a></div>
-    </div>
-
-    <!-- ROOFING SYSTEMS -->
-    <div class="sec-head reveal" style="margin-top:70px;">
-      <div class="eyebrow red">Systems we install &amp; service</div>
-      <h2>Every major commercial roofing system</h2>
-      <p>We work across the full range of low-slope and metal systems, so the recommendation fits your building — not our inventory.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc reveal"><h3>TPO Single-Ply</h3><p>Heat-welded thermoplastic membrane with a reflective white surface — a common choice for large, low-slope commercial roofs.</p><a class="more" href="roof-system-tpo.html">Learn more →</a></div>
-      <div class="svc reveal"><h3>EPDM</h3><p>Synthetic rubber membrane known for long service life and reliable performance across wide temperature swings.</p><a class="more" href="roof-system-epdm.html">Learn more →</a></div>
-      <div class="svc reveal"><h3>PVC Single-Ply</h3><p>Heat-welded thermoplastic membrane with strong resistance to grease and chemicals — often used on restaurants and industrial buildings.</p></div>
-      <div class="svc reveal"><h3>Modified Bitumen</h3><p>Asphalt-based rolled membrane reinforced with polymers, applied in multiple plies for durable, redundant waterproofing.</p></div>
-      <div class="svc reveal"><h3>Built-Up (BUR)</h3><p>Traditional multi-layer system of alternating asphalt and reinforcing plies, finished with a protective surfacing.</p><a class="more" href="roof-system-bur.html">Learn more →</a></div>
-      <div class="svc reveal"><h3>Standing-Seam Metal</h3><p>Interlocking metal panels with concealed fasteners — a long-lived, low-maintenance option for both roofs and architectural walls.</p><a class="more" href="service-metal-roofing.html">Learn more →</a></div>
+      <div class="svc reveal"><span class="num">01</span><h3>New Construction</h3><p>Ground-up commercial roofing installed to spec, on schedule, alongside your GC and design team.</p><a class="more" href="service-commercial-roofing.html">Learn More →</a></div>
+      <div class="svc reveal"><span class="num">02</span><h3>Re-Roofing</h3><p>Full tear-off and replacement systems engineered for large-format commercial and industrial buildings.</p><a class="more" href="service-reroofing.html">Learn More →</a></div>
+      <div class="svc reveal"><span class="num">03</span><h3>Preventative Maintenance</h3><p>Scheduled inspection and repair programs that extend roof life and protect your warranty.</p><a class="more" href="service-maintenance.html">Learn More →</a></div>
+      <div class="svc reveal"><span class="num">04</span><h3>Emergency Leak Repair</h3><p>Around-the-clock crews ready to secure your building when a leak can't wait for business hours.</p><a class="more" href="service-emergency.html">Learn More →</a></div>
+      <div class="svc reveal"><span class="num">05</span><h3>Roof Inspections</h3><p>Documented condition reports with photos and prioritized recommendations — see problems before they spread.</p><a class="more" href="service-roof-inspections.html">Learn More →</a></div>
+      <div class="svc reveal"><span class="num">06</span><h3>Commercial Waterproofing</h3><p>Deck coatings, sealants, and membrane systems that stop water before it reaches the structure.</p><a class="more" href="service-waterproofing.html">Learn More →</a></div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
+<!-- INDUSTRIES WE SERVE -->
+<section style="background:var(--bg-2);">
   <div class="wrap">
-    <div class="s reveal"><b>35+</b><span>Years of experience</span></div>
-    <div class="s reveal"><b>24/7</b><span>Emergency response</span></div>
-    <div class="s reveal"><b>2</b><span>States — CA &amp; NV</span></div>
-    <div class="s reveal"><b>100%</b><span>Licensed &amp; bonded</span></div>
-  </div>
-</section>
-
-<!-- EMERGENCY FEATURE -->
-<section>
-  <div class="wrap split">
-    <div class="media reveal" style="background-image:url('assets/img/proj-vacaville.jpg');"></div>
-    <div class="reveal">
-      <div class="eyebrow red">24/7 Emergency Roof Service</div>
-      <h2>For the leaks that keep you up at night</h2>
-      <p>Extreme weather is no friend of your roof. That's why it's important to take care of emergencies as they happen, so they don't turn into something more.</p>
-      <p>From a leak to severe wind damage, Kodiak's designated emergency roof service provides expert on-demand repairs to protect what is most important to you.</p>
-      <ul class="tick">
-        <li>Rapid on-demand dispatch across California &amp; Nevada</li>
-        <li>Leak, storm, and wind-damage response</li>
-        <li>Temporary stabilization and permanent repair</li>
-      </ul>
-      <a href="tel:9162531900" class="btn btn-gold">Call 916.253.1900</a>
+    <div class="sec-head reveal">
+      <div class="eyebrow red">Who we serve</div>
+      <h2>Industries We Serve</h2>
+      <p>Every industry places different demands on a roof — Kodiak tailors its approach to each one.</p>
+    </div>
+    <div class="pgrid" style="grid-template-columns:repeat(3,1fr);">
+      <a class="pc reveal" href="industry-retail.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-retail.jpg');"></div><div class="grad"></div><div class="meta"><h3>Retail &amp; Shopping Centers</h3></div></a>
+      <a class="pc reveal" href="industry-industrial-warehouse.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-industrial.jpg');"></div><div class="grad"></div><div class="meta"><h3>Industrial &amp; Warehouse</h3></div></a>
+      <a class="pc reveal" href="industry-education.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-education.jpg');"></div><div class="grad"></div><div class="meta"><h3>Education</h3></div></a>
+      <a class="pc reveal" href="industry-hospitality.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-hospitality.jpg');"></div><div class="grad"></div><div class="meta"><h3>Hospitality</h3></div></a>
+      <a class="pc reveal" href="industry-commercial-real-estate.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-office.jpg');"></div><div class="grad"></div><div class="meta"><h3>Commercial Real Estate</h3></div></a>
+      <a class="pc reveal" href="industry-government.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-government.jpg');"></div><div class="grad"></div><div class="meta"><h3>Government &amp; Municipal</h3></div></a>
+      <a class="pc reveal" href="industry-sports-entertainment.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-sports.jpg');"></div><div class="grad"></div><div class="meta"><h3>Sports &amp; Entertainment</h3></div></a>
+      <a class="pc reveal" href="industry-data-centers.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-datacenter.jpg');"></div><div class="grad"></div><div class="meta"><h3>Data Centers</h3></div></a>
+      <a class="pc reveal" href="industry-multifamily.html" style="min-height:260px;"><div class="ph" style="background-image:url('assets/img/ind-multifamily.jpg');"></div><div class="grad"></div><div class="meta"><h3>Multifamily</h3></div></a>
     </div>
   </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section id="projects" style="padding-bottom:60px;">
+<!-- ABOUT OUR COMPANY -->
+<section style="background:var(--dark,#1C1C1C);color:#fff;">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow">Who we are</div>
+      <h2 style="color:#fff;">About Our Company</h2>
+      <p>In 35 years, Kodiak Roofing &amp; Waterproofing has built its reputation across Northern California and Nevada on a portfolio that includes Google Bay View, Golden 1 Center, Sacramento International Airport, and Carson Tahoe Hospital.</p>
+      <ul class="tick">
+        <li>We earned GAF Master Select Certification in 2004.</li>
+        <li>We're a recipient of the GAF President's Club Award.</li>
+        <li>Every project we complete is backed by honest assessments and quality installation.</li>
+      </ul>
+      <a class="btn btn-gold" href="about.html">Learn More</a>
+    </div>
+    <div class="media reveal" style="background-image:url('assets/img/proj-sacairport.jpg');min-height:380px;"></div>
+  </div>
+  <div class="wrap" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:60px;text-align:center;">
+    <div class="s reveal"><b style="font-family:var(--serif);font-size:3rem;color:#fff;">300M+</b><span>Sq Ft of Roofing Installed</span></div>
+    <div class="s reveal"><b style="font-family:var(--serif);font-size:3rem;color:#fff;">8,000+</b><span>Projects Completed</span></div>
+    <div class="s reveal"><b style="font-family:var(--serif);font-size:3rem;color:#fff;">35+</b><span>Years in Business</span></div>
+  </div>
+</section>
+
+<!-- CHECK OUT OUR PROJECTS -->
+<section id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow red">Selected work</div>
-      <h2>Trusted on landmark buildings</h2>
-      <p class="rail-hint">← Drag to explore →</p>
+      <h2>Check Out Our Projects</h2>
+      <p>Explore Kodiak's work across Northern California and Nevada.</p>
     </div>
+    <div class="pgrid" style="grid-template-columns:repeat(3,1fr);">
+      <a class="pc reveal" href="projects.html" style="min-height:320px;"><div class="ph" style="background-image:url('assets/img/proj-sportsdrive.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Sacramento, CA</div><h3>Sports Drive Sacramento</h3></div></a>
+      <a class="pc reveal" href="projects.html" style="min-height:320px;"><div class="ph" style="background-image:url('assets/img/proj-niello.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Rocklin, CA</div><h3>Niello Porsche Rocklin</h3></div></a>
+      <a class="pc reveal" href="projects.html" style="min-height:320px;"><div class="ph" style="background-image:url('assets/img/proj-medline.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Tracy, CA</div><h3>Medline Tracy</h3></div></a>
+    </div>
+    <div style="text-align:center;margin-top:34px;"><a class="btn btn-red" href="projects.html">View All Projects</a></div>
   </div>
-  <div class="rail">
-    <div class="pc"><div class="ph" style="background-image:url('assets/img/proj-google.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Mountain View, CA</div><h3>Google Bay View Campus</h3><span class="d">Large-format commercial roofing</span></div></div>
-    <div class="pc"><div class="ph" style="background-image:url('assets/img/proj-golden1.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Sacramento, CA</div><h3>Golden 1 Center</h3><span class="d">Arena roofing systems</span></div></div>
-    <div class="pc"><div class="ph" style="background-image:url('assets/img/proj-carson.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Carson City, NV</div><h3>Carson Tahoe Hospital</h3><span class="d">Critical-care waterproofing</span></div></div>
-    <div class="pc"><div class="ph" style="background-image:url('assets/img/proj-vacaville.jpg');"></div><div class="grad"></div><div class="meta"><div class="loc">Vacaville, CA</div><h3>Midway Commerce Center</h3><span class="d">Industrial metal roofing</span></div></div>
-  </div>
-  <div class="wrap" style="text-align:center;margin-top:30px;"><a href="projects.html" class="btn btn-ghost">View all projects</a></div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="stats" style="background:var(--bg);border:none;">
-  <div class="wrap" style="display:block;">
+<!-- HEAR FROM OUR CLIENTS -->
+<section style="background:var(--bg-2);position:relative;overflow:hidden;">
+  <img src="assets/img/paw-print.svg" alt="" style="position:absolute;right:-40px;bottom:-40px;width:280px;opacity:.14;pointer-events:none;">
+  <div class="wrap">
     <div class="sec-head center reveal">
       <div class="eyebrow red">What clients say</div>
-      <h2>Facilities teams trust Kodiak</h2>
+      <h2>Hear From Our Clients</h2>
     </div>
     <div class="testi-grid">
       <div class="q reveal"><div class="mk">"</div><p>I am really satisfied with the overall process. The crew was professional and the results speak for themselves.</p><div class="who"><div class="av">DL</div><div><b>Dave Lamb</b><span>Facilities Manager, Carson Tahoe Hospital</span></div></div></div>
       <div class="q reveal"><div class="mk">"</div><p>The service that we get is fantastic. Responsive, thorough, and they stand behind their work every time.</p><div class="who"><div class="av">JA</div><div><b>James Averill</b><span>Assistant Project Manager, Enso Village</span></div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:34px;"><a class="more" href="testimonials.html">Read more testimonials →</a></div>
+  </div>
+</section>
+
+<!-- AREAS WE SERVE -->
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="eyebrow red">Where we work</div>
+      <h2>Areas We Serve</h2>
+      <p>Kodiak provides commercial roofing services across Northern California and Northern Nevada, from the Central Valley to the Sierra foothills.</p>
+      <ul class="tick" style="columns:2;column-gap:30px;">
+        <li>Sacramento</li>
+        <li>Stockton</li>
+        <li>Reno</li>
+        <li>Modesto</li>
+        <li>Bay Area</li>
+        <li>Redding</li>
+        <li>Walnut Creek</li>
+        <li>Roseville</li>
+        <li>Central Valley</li>
+      </ul>
+      <a class="btn btn-red" href="areas-we-serve.html">Learn More</a>
+    </div>
+    <div class="reveal">
+      <img src="assets/img/areas-map.png" alt="Map of Kodiak service areas across Northern California and Nevada" style="border-radius:15px;">
+    </div>
+  </div>
+</section>
+
+<!-- ROOF SYSTEMS WE INSTALL -->
+<section style="background:var(--bg-2);">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow red">Systems we install &amp; service</div>
+      <h2>Roof Systems We Install</h2>
+      <p>We work across the full range of low-slope and metal systems, so the recommendation fits your building — not our inventory.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><img src="assets/img/proj-sportsdrive.jpg" alt="TPO single-ply roof installation" style="border-radius:10px;margin-bottom:14px;height:150px;width:100%;object-fit:cover;"><h3>TPO</h3><p>A poorly installed TPO roof tends to fail at the seams first. We install to GAF-certified standards, so that's never the outcome.</p><a class="more" href="roof-system-tpo.html">Learn More →</a></div>
+      <div class="svc reveal"><img src="assets/img/sys-epdm.jpg" alt="EPDM rubber membrane roof" style="border-radius:10px;margin-bottom:14px;height:150px;width:100%;object-fit:cover;"><h3>EPDM</h3><p>Synthetic rubber membrane known for long service life and reliable performance across wide temperature swings.</p><a class="more" href="roof-system-epdm.html">Learn More →</a></div>
+      <div class="svc reveal"><img src="assets/img/sys-bur.jpg" alt="Built-up roofing system" style="border-radius:10px;margin-bottom:14px;height:150px;width:100%;object-fit:cover;"><h3>Built-Up Roofing</h3><p>Traditional multi-layer system of alternating asphalt and reinforcing plies, finished with a protective surfacing.</p><a class="more" href="roof-system-bur.html">Learn More →</a></div>
+      <div class="svc reveal"><img src="assets/img/proj-niello.jpg" alt="Metal ACM roof and wall system" style="border-radius:10px;margin-bottom:14px;height:150px;width:100%;object-fit:cover;"><h3>Metal (ACM) Roof Systems</h3><p>Aluminum composite panels with concealed fasteners — a long-lived, architectural option for roofs and walls.</p><a class="more" href="service-metal-roofing.html">Learn More →</a></div>
+      <div class="svc reveal"><img src="assets/img/ind-office.jpg" alt="Insulated metal wall panels on a commercial building" style="border-radius:10px;margin-bottom:14px;height:150px;width:100%;object-fit:cover;"><h3>Insulated Wall Panels</h3><p>Factory-insulated metal panels that combine cladding, insulation, and weather barrier in a single system.</p><a class="more" href="metal-insulated-wall-panels.html">Learn More →</a></div>
+      <div class="svc reveal"><img src="assets/img/sys-metalfab.jpg" alt="Custom metal fabrication" style="border-radius:10px;margin-bottom:14px;height:150px;width:100%;object-fit:cover;"><h3>Metal Fabrication</h3><p>Custom-fabricated flashings, copings, and trim formed in-house for a precise fit on every project.</p><a class="more" href="service-metal-wall-panels.html">Learn More →</a></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <div class="glow"></div>
   <div class="wrap reveal">
     <div class="eyebrow red">Get started</div>
-    <h2 style="margin-top:14px;">Let's protect your <span class="gold">building</span></h2>
-    <p>Tell us about your property and we'll put over 35 years of commercial roofing experience to work for you.</p>
+    <h2 style="margin-top:14px;">Your Roof Deserves a Commercial Roofing Company That Treats It Like an Investment</h2>
+    <p>Tell us about your building, and we'll schedule an inspection to map out exactly what your roof needs.</p>
     <div class="act">
-      <a href="contact.html" class="btn btn-red">Request a Quote</a>
-      <a href="tel:9162531900" class="btn btn-ghost">Call 916.253.1900</a>
+      <a class="btn btn-red js-contact-cta" href="contact.html">Request a Quote</a>
+      <a class="btn btn-ghost" href="tel:9162531900">Call 916.253.1900</a>
     </div>
   </div>
 </section>
@@ -271,7 +273,7 @@
   <div class="wrap">
     <div class="fg">
       <div>
-        <a href="index.html" class="brand"><img src="assets/img/logo.png" alt="Kodiak Roofing &amp; Waterproofing"></a>
+        <a href="index.html" class="brand"><img src="assets/img/seal-2027.png" alt="Kodiak Roofing &amp; Waterproofing"></a>
         <p class="tag">Adding extraordinary value to buildings and lives. Commercial roofing &amp; waterproofing across California &amp; Nevada.</p>
       </div>
       <div><h4>Services</h4><ul><li><a href="service-commercial-roofing.html">New Construction</a></li><li><a href="service-reroofing.html">Commercial Re-Roofing</a></li><li><a href="service-maintenance.html">Preventative Maintenance</a></li><li><a href="service-emergency.html">24/7 Emergency Repair</a></li><li><a href="service-roof-inspections.html">Roof Inspections</a></li><li><a href="service-waterproofing.html">Waterproofing</a></li><li><a href="services.html">All Services &rarr;</a></li></ul></div>
