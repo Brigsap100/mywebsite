@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## designs/ — Key Web Design concept showcase (the active work)
+
+`designs/` is a client-demo showcase of homepage concepts for **Key Web Design** (Brigham's studio: websites, LSA ads, apps & AI agents). Product context lives in `PRODUCT.md` (impeccable schema) — read it before design work. Key rules:
+
+- Each concept is one fully self-contained HTML file (inline CSS/JS, Google Fonts only); gallery at `designs/index.html`. Main page only — nav links (Work, Services, Pricing, About, Contact) are intentionally inert.
+- 14 concepts exist: layouts 1–5 (Stripe/Linear/Vercel/Anthropic/Wise archetypes), 1a/1b/1d/1e (Gradient-series palette riffs; 1c was rejected & deleted — owner dislikes dark full-page themes), 6–10 (Split/Bold/Bento/Organic/Glass). Green is the pinned color direction; 1e is the one sanctioned blue.
+- **No confirmed business facts** — all stats/response times are illustrative filler; never present them as real, never name clients (Kodiak, JHansen, Alaskan Anglers) in demos without owner approval. Keep the demo-content disclaimer on the gallery.
+- All pages honor `prefers-reduced-motion` and stay readable with JS disabled (`html.js` gate + IntersectionObserver reveals).
+- KNOWN ISSUE: GitHub Pages legacy builder hangs/fails on every build for this repo (predates the showcase). Fix ready: commit `.github/workflows/pages.yml` (needs `gh auth refresh -s workflow` first, then set Pages build_type=workflow via `gh api -X PUT repos/Brigsap100/mywebsite/pages -f build_type=workflow`).
+
+Everything below describes the legacy Kodiak mirror at the repo root — do not disturb it.
+
 ## What this is
 
 Marketing website for Kodiak Roofing & Waterproofing (commercial roofing, CA/NV). Plain static HTML/CSS/JS — **no framework, no build step, no package.json, no generator**. This repo is the standalone public site: **no CRM and no backend** (the CRM lives in its own repo, [Brigsap100/CRMApp](https://github.com/Brigsap100/CRMApp); the full site+backend variant lives in [Brigsap100/kodiak-webpage](https://github.com/Brigsap100/kodiak-webpage)).
