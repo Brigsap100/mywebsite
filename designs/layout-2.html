@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Web Design — Layout 2 · Midnight</title>
+<meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c0b; --panel:#101412; --line:#ffffff14; --line-2:#ffffff22;
+  --txt:#f2f6f3; --dim:#9fb0a6; --dim-2:#6c7d73;
+  --em:#3ecf8e; --em-deep:#26996a; --glow:#3ecf8e2e;
+  --wrap:1060px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h2{font-size:clamp(26px,3.6vw,36px);font-weight:600;letter-spacing:-.025em;line-height:1.15}
+.dim{color:var(--dim)}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;color:var(--em);background:#3ecf8e14;border:1px solid #3ecf8e33;border-radius:999px;padding:5px 13px}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--em);box-shadow:0 0 8px var(--em)}
+
+/* glass nav */
+header{position:sticky;top:0;z-index:50;background:#0a0c0bcc;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:32px;height:60px}
+.logo{font-weight:600;font-size:15.5px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+.logo .key{width:22px;height:22px;border-radius:6px;background:var(--em);color:#04120b;display:grid;place-items:center;font-size:12px;font-weight:700}
+.nav ul{display:flex;gap:24px;list-style:none;font-size:13.5px;font-weight:500;color:var(--dim)}
+.nav ul a:hover{color:var(--txt)}
+.nav .right{margin-left:auto;display:flex;gap:10px;align-items:center}
+.btn{display:inline-block;padding:9px 18px;border-radius:9px;font-size:13.5px;font-weight:500;transition:.15s}
+.btn-em{background:var(--em);color:#04120b;font-weight:600}
+.btn-em:hover{background:#5adfa2}
+.btn-line{border:1px solid var(--line-2);color:var(--txt)}
+.btn-line:hover{border-color:var(--em);color:var(--em)}
+
+/* hero */
+.hero{padding:110px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-260px;left:50%;transform:translateX(-50%);width:820px;height:520px;background:radial-gradient(closest-side,var(--glow),transparent 72%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero h1{font-size:clamp(38px,5.6vw,58px);font-weight:600;letter-spacing:-.04em;line-height:1.06;max-width:17ch;margin:22px 0 18px}
+.hero h1 em{font-style:normal;color:var(--em)}
+.hero p{font-size:17px;color:var(--dim);max-width:52ch;margin-bottom:32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+/* terminal mock */
+.term{margin-top:70px;background:var(--panel);border:1px solid var(--line-2);border-radius:12px;overflow:hidden;box-shadow:0 30px 80px -30px #000, 0 0 60px -20px var(--glow)}
+.term .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#2a332e}
+.term pre{padding:22px 24px;font:13px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--dim);overflow-x:auto}
+.term .g{color:var(--em)}
+.term .w{color:var(--txt)}
+
+/* pillars */
+.pillars{padding:90px 0}
+.sec-top{max-width:560px;margin-bottom:46px}
+.sec-top .lbl{font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--em);display:block;margin-bottom:12px}
+.sec-top p{color:var(--dim);margin-top:12px;font-size:15.5px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cell{background:var(--panel);padding:32px 28px;position:relative;transition:.2s}
+.cell:hover{background:#141a16}
+.cell .ic{width:38px;height:38px;border-radius:9px;border:1px solid #3ecf8e40;background:#3ecf8e10;display:grid;place-items:center;color:var(--em);font-size:17px;margin-bottom:20px}
+.cell h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:9px}
+.cell p{font-size:14px;color:var(--dim)}
+.cell .more{display:inline-block;margin-top:18px;font-size:13.5px;color:var(--em)}
+
+/* deep dives */
+.deep{padding:40px 0 90px;display:grid;gap:80px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.row:nth-child(even) .txt{order:2}
+.row h3{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:14px 0 12px}
+.row p{color:var(--dim);font-size:15px}
+.row .mock{background:var(--panel);border:1px solid var(--line-2);border-radius:12px;min-height:250px;display:grid;place-items:center;color:var(--dim-2);font:12.5px ui-monospace,monospace;position:relative;overflow:hidden}
+.row .mock::after{content:"";position:absolute;inset:auto -60px -80px auto;width:260px;height:200px;background:radial-gradient(closest-side,var(--glow),transparent 70%)}
+.klist{margin-top:20px;list-style:none;font-size:14px;color:var(--dim)}
+.klist li{padding:7px 0 7px 26px;position:relative}
+.klist li::before{content:"→";position:absolute;left:0;color:var(--em)}
+
+/* cta */
+.cta{padding:30px 0 110px;text-align:center}
+.cta .inner{border:1px solid var(--line-2);border-radius:16px;padding:70px 30px;position:relative;overflow:hidden;background:var(--panel)}
+.cta .inner::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:560px;height:320px;background:radial-gradient(closest-side,var(--glow),transparent 72%)}
+.cta h2{position:relative}
+.cta p{color:var(--dim);margin:14px 0 30px;position:relative}
+.cta .btn{position:relative}
+
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:13.5px;color:var(--dim-2)}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer ul{display:flex;gap:20px;list-style:none}
+footer a:hover{color:var(--em)}
+
+@media(max-width:860px){
+  .nav ul{display:none}
+  .grid3{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  .row:nth-child(even) .txt{order:0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="key">K</span>Key Web Design</a>
+    <ul>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="right">
+      <a class="btn btn-line" href="#">See work</a>
+      <a class="btn btn-em" href="#">Start a project</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="chip">Now shipping AI agents for local business</span>
+    <h1>The website is step one. <em>The system</em> is the point.</h1>
+    <p>Key Web Design builds fast, hand-coded sites — then wires them into Google Local Services Ads and AI agents that answer, quote, and book while you work.</p>
+    <div class="ctas">
+      <a class="btn btn-em" href="#">Start a project</a>
+      <a class="btn btn-line" href="#">How it works</a>
+    </div>
+    <div class="term">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <pre><span class="g">$</span> kwd deploy --client your-business
+<span class="w">✓</span> website        built · hand-coded · &lt;1s load
+<span class="w">✓</span> lsa-ads        Google Guaranteed · pay-per-lead
+<span class="w">✓</span> ai-agent       answering · quoting · booking
+<span class="g">→ live.</span> new lead in queue: <span class="w">"need an estimate this week"</span></pre>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="sec-top">
+      <span class="lbl">Services</span>
+      <h2>Three layers. One growth stack.</h2>
+      <p>Each layer feeds the next: the site converts, the ads fill it, the agents make sure nothing slips.</p>
+    </div>
+    <div class="grid3">
+      <div class="cell">
+        <div class="ic">◇</div>
+        <h3>Website Design</h3>
+        <p>Custom, hand-coded, brutally fast. Designed around one job: turning visits into calls. Maintained monthly so it never rots.</p>
+        <a class="more" href="#">Explore builds →</a>
+      </div>
+      <div class="cell">
+        <div class="ic">▲</div>
+        <h3>LSA Ads</h3>
+        <p>Google Local Services Ads, managed end to end — verification, the Google Guaranteed badge, budgets, and lead disputes.</p>
+        <a class="more" href="#">Explore ads →</a>
+      </div>
+      <div class="cell">
+        <div class="ic">✦</div>
+        <h3>Apps &amp; AI Agents</h3>
+        <p>Instant-quote estimators, after-hours AI answering, automated follow-up. Custom software scoped to your actual workflow.</p>
+        <a class="more" href="#">Explore agents →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap deep">
+    <div class="row">
+      <div class="txt">
+        <span class="chip">01 · Build</span>
+        <h3>A site that loads before doubt does.</h3>
+        <p>No page builders, no bloat. Every site is written by hand, scores green on Core Web Vitals, and is kept updated, backed up, and monitored under a care plan.</p>
+        <ul class="klist">
+          <li>Custom design — never a template</li>
+          <li>Copywriting for local search intent</li>
+          <li>Monthly care: edits, backups, monitoring</li>
+        </ul>
+      </div>
+      <div class="mock">[ site preview — mobile + desktop ]</div>
+    </div>
+    <div class="row">
+      <div class="txt">
+        <span class="chip">02 · Advertise</span>
+        <h3>Top of Google. Pay only for real leads.</h3>
+        <p>LSA puts you above the map pack with the Google Guaranteed badge. We handle verification, tune your budget weekly, and dispute junk leads so your spend stays honest.</p>
+        <ul class="klist">
+          <li>Full profile setup &amp; verification</li>
+          <li>Weekly bid and budget tuning</li>
+          <li>Junk-lead disputes filed for you</li>
+        </ul>
+      </div>
+      <div class="mock">[ LSA dashboard preview ]</div>
+    </div>
+    <div class="row">
+      <div class="txt">
+        <span class="chip">03 · Automate</span>
+        <h3>An employee that never sleeps.</h3>
+        <p>AI agents answer missed calls, quote standard jobs from your real pricing, book estimates onto your calendar, and chase every lead until it answers.</p>
+        <ul class="klist">
+          <li>24/7 lead response by voice or text</li>
+          <li>Instant-quote estimator apps</li>
+          <li>Follow-up sequences that never forget</li>
+        </ul>
+      </div>
+      <div class="mock">[ agent conversation preview ]</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="inner">
+      <h2>Stop losing the leads you already earn.</h2>
+      <p>One call. We'll map your stack — site, ads, agents — and tell you what to fix first.</p>
+      <a class="btn btn-em" href="mailto:brigham@saptron.com">Book the call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Key Web Design · brigham@saptron.com</span>
+    <ul>
+      <li><a href="#">Work</a></li><li><a href="#">Services</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

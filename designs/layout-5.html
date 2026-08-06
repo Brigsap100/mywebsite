@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Web Design — Layout 5 · Forest (AI-first)</title>
+<meta name="description" content="Design demo — Key Web Design: AI agents, websites, LSA ads.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#163300; --forest-2:#1d4206; --ink:#0e2400;
+  --lime:#9fe870; --lime-soft:#c8f5a8; --paper:#f7faf2; --white:#ffffff;
+  --dimlight:#b7d3a3; --dim:#4c6238; --line:#e2ead6;
+  --disp:'Space Grotesk',Inter,sans-serif; --sans:Inter,system-ui,sans-serif;
+  --wrap:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--forest);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em}
+h2{font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.12}
+.pill{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);border:1px solid #9fe87044;border-radius:999px;padding:6px 15px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:#163300e6;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff14}
+.nav{display:flex;align-items:center;gap:32px;height:66px}
+.logo{font-family:var(--disp);font-weight:700;font-size:17px;display:flex;align-items:center;gap:10px}
+.logo .key{width:26px;height:26px;border-radius:8px;background:var(--lime);color:var(--forest);display:grid;place-items:center;font-size:14px}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500;color:var(--dimlight)}
+.nav ul a:hover{color:var(--lime)}
+.nav .btn{margin-left:auto}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;font-weight:600;font-size:14.5px;transition:.15s}
+.btn-lime{background:var(--lime);color:var(--forest)}
+.btn-lime:hover{background:var(--lime-soft)}
+.btn-ghost{border:1.5px solid #ffffff33;color:var(--white)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+
+/* hero — rotating headline, AI-first */
+.hero{padding:104px 0 90px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-180px;top:40px;width:520px;height:520px;border-radius:50%;border:1.5px dashed #9fe87033;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.hero::after,.roto span{animation:none}}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(42px,6.6vw,74px);font-weight:700;line-height:1.03;letter-spacing:-.03em;max-width:15ch;margin:22px 0 8px}
+.roto{display:block;height:1.15em;overflow:hidden;color:var(--lime)}
+.roto span{display:block;animation:cycle 8s cubic-bezier(.7,0,.3,1) infinite}
+@keyframes cycle{
+  0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-100%)}
+  50%,70%{transform:translateY(-200%)}75%,95%{transform:translateY(-300%)}100%{transform:translateY(-400%)}
+}
+.hero p{font-size:18px;color:var(--dimlight);max-width:52ch;margin:20px 0 34px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+/* chat proof */
+.chat{margin-top:70px;max-width:520px;background:var(--forest-2);border:1px solid #ffffff1a;border-radius:18px;padding:22px}
+.chat .m{max-width:82%;padding:11px 15px;border-radius:14px;font-size:14px;margin-bottom:10px}
+.chat .them{background:#ffffff14;color:#e8f2de;border-bottom-left-radius:4px}
+.chat .ai{background:var(--lime);color:var(--forest);margin-left:auto;border-bottom-right-radius:4px;font-weight:500}
+.chat .meta{font-size:11.5px;color:var(--dimlight);margin:2px 6px 12px;display:flex;gap:6px;align-items:center}
+.chat .meta.r{justify-content:flex-end}
+.chat .dot{width:6px;height:6px;border-radius:50%;background:var(--lime)}
+
+/* light band — services */
+.light{background:var(--paper);color:var(--ink);padding:96px 0}
+.light .pill{color:#3e7a1e;border-color:#3e7a1e33}
+.light .lead{color:var(--dim);max-width:56ch;margin-top:14px}
+.bento{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;margin-top:46px}
+.b{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:30px;transition:.18s}
+.b:hover{transform:translateY(-4px);box-shadow:0 18px 44px -20px #16330040}
+.b.hero-card{grid-row:span 2;background:var(--forest);color:var(--white);border-color:var(--forest);display:flex;flex-direction:column}
+.b .k{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#3e7a1e;margin-bottom:14px;display:block}
+.b.hero-card .k{color:var(--lime)}
+.b h3{font-size:21px;font-weight:700;margin-bottom:10px}
+.b p{font-size:14.5px;color:var(--dim)}
+.b.hero-card p{color:var(--dimlight)}
+.b ul{list-style:none;margin-top:16px;font-size:14px;color:var(--dim)}
+.b.hero-card ul{color:var(--dimlight);margin-bottom:auto}
+.b li{padding:6px 0 6px 24px;position:relative}
+.b li::before{content:"✦";position:absolute;left:0;color:#3e7a1e}
+.b.hero-card li::before{color:var(--lime)}
+.b .cta-mini{margin-top:22px;font-weight:600;font-size:14px;color:#3e7a1e}
+.b.hero-card .cta-mini{color:var(--lime)}
+
+/* agent capabilities strip */
+.caps{padding:96px 0}
+.caps .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.cap{border:1px solid #ffffff1a;border-radius:16px;padding:26px 22px;background:#ffffff08}
+.cap b{font-family:var(--disp);font-size:26px;color:var(--lime);display:block;margin-bottom:8px}
+.cap h4{font-size:15px;font-weight:600;margin-bottom:6px}
+.cap p{font-size:13px;color:var(--dimlight)}
+
+/* CTA */
+.cta{padding:20px 0 110px}
+.cta .box{background:var(--lime);color:var(--forest);border-radius:24px;padding:66px 40px;text-align:center}
+.cta h2{max-width:24ch;margin:0 auto 12px}
+.cta p{color:#2c5212;margin-bottom:30px}
+.cta .btn{background:var(--forest);color:var(--white)}
+.cta .btn:hover{background:var(--ink)}
+
+footer{border-top:1px solid #ffffff14;padding:42px 0;font-size:14px;color:var(--dimlight)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer ul{display:flex;gap:22px;list-style:none}
+footer a:hover{color:var(--lime)}
+
+@media(max-width:900px){
+  .nav ul{display:none}
+  .bento{grid-template-columns:1fr}
+  .b.hero-card{grid-row:auto}
+  .caps .grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="key">K</span>Key Web Design</a>
+    <ul>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a class="btn btn-lime" href="#">Start a project</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">AI agents for local business</span>
+    <h1>While you work, your AI agent
+      <span class="roto">
+        <span>answers the phone.</span>
+        <span>quotes the job.</span>
+        <span>books the estimate.</span>
+        <span>follows up. Twice.</span>
+        <span>answers the phone.</span>
+      </span>
+    </h1>
+    <p>Key Web Design gives owner-run businesses an unfair advantage: a fast website, Google Local Services Ads, and an AI agent that turns every lead into a booked job — even at 9pm on a Sunday.</p>
+    <div class="ctas">
+      <a class="btn btn-lime" href="#">Meet your agent</a>
+      <a class="btn btn-ghost" href="#">See the full stack</a>
+    </div>
+
+    <div class="chat">
+      <div class="m them">Hi — my roof is leaking near the chimney. Are you still open?</div>
+      <div class="meta"><span>Missed call → text · 9:04 PM</span></div>
+      <div class="m ai">We've got you. I can have a crew member call you first thing tomorrow — or book a free inspection right now. What's the address?</div>
+      <div class="meta r"><span class="dot"></span><span>Your AI agent · replied in 4 seconds</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <span class="pill">The full stack</span>
+    <h2>The agent is the closer.<br>The site and the ads feed it.</h2>
+    <p class="lead">Every layer works alone — together they compound. We build them in the order that pays fastest for your business.</p>
+    <div class="bento">
+      <div class="b hero-card">
+        <span class="k">Apps &amp; AI Agents</span>
+        <h3>An employee that never sleeps</h3>
+        <p>Custom AI agents trained on your services, prices, and service area — answering calls and texts, quoting standard jobs, booking estimates onto your real calendar.</p>
+        <ul>
+          <li>24/7 voice &amp; text answering</li>
+          <li>Instant-quote estimator apps</li>
+          <li>Automatic follow-up until they answer</li>
+          <li>Hands leads to you the moment it should</li>
+        </ul>
+        <span class="cta-mini">Meet the agents →</span>
+      </div>
+      <div class="b">
+        <span class="k">Website Design</span>
+        <h3>The storefront</h3>
+        <p>Hand-coded, loads in under a second, written to convert local search into calls. Maintained monthly so it never goes stale.</p>
+        <span class="cta-mini">See builds →</span>
+      </div>
+      <div class="b">
+        <span class="k">LSA Ads</span>
+        <h3>The firehose</h3>
+        <p>Google Local Services Ads with the Google Guaranteed badge — top of the page, pay-per-lead, tuned weekly by us.</p>
+        <span class="cta-mini">See the ad program →</span>
+      </div>
+      <div class="b" style="grid-column:span 2">
+        <span class="k">Why one team</span>
+        <h3>No vendor finger-pointing</h3>
+        <p>Site, ads, and AI from one studio means every layer is built to feed the next — the ad click lands on a page the agent already knows how to close.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="caps">
+  <div class="wrap">
+    <span class="pill">What the agent handles</span>
+    <h2>Hire it once. It shows up every shift.</h2>
+    <div class="grid">
+      <div class="cap"><b>4s</b><h4>First response</h4><p>Missed calls get a text back before the customer dials your competitor.</p></div>
+      <div class="cap"><b>24/7</b><h4>Always on</h4><p>Nights, weekends, holidays — the agent keeps office hours you never could.</p></div>
+      <div class="cap"><b>100%</b><h4>Follow-up rate</h4><p>Every open lead gets chased until it books, declines, or asks to stop.</p></div>
+      <div class="cap"><b>Yours</b><h4>Your voice, your rules</h4><p>Trained on your services and prices; escalates to a human exactly when you say.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="box">
+      <h2>Give your business the employee it's been missing.</h2>
+      <p>A short call, a live demo of an agent answering as your company — then you decide.</p>
+      <a class="btn" href="mailto:brigham@saptron.com">Book the demo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Key Web Design · brigham@saptron.com</span>
+    <ul>
+      <li><a href="#">Work</a></li><li><a href="#">Services</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

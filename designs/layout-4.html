@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Web Design — Layout 4 · Editorial</title>
+<meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf9f5; --paper-2:#f2f0e9; --ink:#141413; --dim:#5f5e57; --line:#e3e1d8;
+  --moss:#3f6f4f; --moss-deep:#2c5239; --cactus:#7d9b76; --olive:#8a8f62; --sage:#dbe7dc;
+  --serif:'Fraunces',Georgia,serif; --sans:Inter,system-ui,sans-serif;
+  --wrap:1040px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em}
+h2{font-size:clamp(28px,3.8vw,40px);line-height:1.15}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
+.rule{border:0;border-top:1px solid var(--line)}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:#faf9f5e6;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:32px;height:64px}
+.logo{font-family:var(--serif);font-size:19px;font-weight:600;display:flex;align-items:center;gap:10px}
+.logo .mark{width:24px;height:24px;border-radius:50%;background:var(--moss);display:inline-block;position:relative}
+.logo .mark::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--paper)}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500;color:var(--dim)}
+.nav ul a:hover{color:var(--moss-deep)}
+.nav .btn{margin-left:auto}
+.btn{display:inline-block;padding:11px 22px;border-radius:999px;font-size:14px;font-weight:600;background:var(--ink);color:var(--paper);transition:.15s}
+.btn:hover{background:var(--moss-deep)}
+.btn.soft{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+.btn.soft:hover{border-color:var(--moss-deep);color:var(--moss-deep);background:transparent}
+
+/* hero — editorial, left-aligned, serif display */
+.hero{padding:100px 0 80px}
+.hero h1{font-size:clamp(42px,6.2vw,66px);line-height:1.06;max-width:18ch}
+.hero h1 em{font-style:italic;color:var(--moss)}
+.hero p{margin:26px 0 34px;font-size:18px;color:var(--dim);max-width:54ch}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero .note{margin-top:56px;display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--dim)}
+.hero .note .sw{display:flex;gap:5px}
+.hero .note .sw i{width:14px;height:14px;border-radius:4px;display:inline-block}
+
+/* editorial service list — journal cards */
+.svcs{padding:80px 0}
+.svcs .top{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:14px 0 40px;flex-wrap:wrap}
+.list{display:grid;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.item{background:var(--paper);display:grid;grid-template-columns:150px 1fr 320px;gap:30px;padding:36px 6px;align-items:start;transition:.15s}
+.item:hover{background:#f6f4ee}
+.item .no{font-family:var(--serif);font-size:15px;color:var(--dim)}
+.item .no b{display:block;font-size:13px;font-family:var(--sans);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--moss);margin-top:6px}
+.item h3{font-size:26px;margin-bottom:10px}
+.item p{color:var(--dim);font-size:15px;max-width:52ch}
+.item .side{font-size:13.5px;color:var(--dim);border-left:1px solid var(--line);padding-left:24px}
+.item .side b{display:block;color:var(--ink);font-weight:600;margin-bottom:8px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.item .side li{list-style:none;padding:4px 0}
+.item .side li::before{content:"— ";color:var(--cactus)}
+.tagrow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.tag{font-size:12px;font-weight:500;padding:4px 12px;border-radius:999px;background:var(--sage);color:var(--moss-deep)}
+.tag.olv{background:#ecebda;color:#6a6f42}
+.tag.kft{background:#efe8db;color:#7a6a4f}
+
+/* essay/beliefs section */
+.essay{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0}
+.essay .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.essay blockquote{font-family:var(--serif);font-size:clamp(22px,2.8vw,30px);line-height:1.35;font-weight:500}
+.essay blockquote em{font-style:italic;color:var(--moss)}
+.beliefs{display:grid;gap:26px}
+.belief{padding-left:22px;border-left:2px solid var(--cactus)}
+.belief h4{font-size:15.5px;font-weight:600;margin-bottom:5px}
+.belief p{font-size:14px;color:var(--dim)}
+
+/* cta */
+.cta{padding:100px 0;text-align:center}
+.cta h2{max-width:22ch;margin:14px auto}
+.cta p{color:var(--dim);margin-bottom:32px}
+
+footer{border-top:1px solid var(--line);padding:44px 0;font-size:14px;color:var(--dim)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer ul{display:flex;gap:22px;list-style:none}
+footer a:hover{color:var(--moss-deep)}
+
+@media(max-width:900px){
+  .nav ul{display:none}
+  .item{grid-template-columns:1fr}
+  .item .side{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}
+  .essay .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="mark"></span>Key Web Design</a>
+    <ul>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a class="btn" href="#">Start a project</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="lbl">A studio for local business</span>
+    <h1>We build websites. Then we make them <em>earn their keep.</em></h1>
+    <p>Key Web Design is a small studio doing three things well: hand-coded websites, managed Google Local Services Ads, and AI agents that answer and book your leads — in that order, because that's the order growth happens.</p>
+    <div class="ctas">
+      <a class="btn" href="#">Start a project</a>
+      <a class="btn soft" href="#">Read how we work</a>
+    </div>
+    <div class="note">
+      <span class="sw">
+        <i style="background:#3f6f4f"></i><i style="background:#7d9b76"></i><i style="background:#8a8f62"></i><i style="background:#dbe7dc"></i>
+      </span>
+      Moss · Cactus · Olive · Sage — a palette that stays out of your brand's way.
+    </div>
+  </div>
+</section>
+
+<section class="svcs">
+  <div class="wrap">
+    <span class="lbl">Services</span>
+    <div class="top">
+      <h2>Three disciplines, one through-line.</h2>
+    </div>
+    <div class="list">
+      <div class="item">
+        <div class="no">№ 1<b>Build</b></div>
+        <div>
+          <h3>Website Design</h3>
+          <p>A fast, hand-coded site written around the questions your customers actually ask — then kept alive with monthly care plans: updates, backups, monitoring, and changes whenever you need them.</p>
+          <div class="tagrow"><span class="tag">Custom design</span><span class="tag olv">Care plans</span><span class="tag kft">Local SEO copy</span></div>
+        </div>
+        <ul class="side"><b>Included</b><li>Design, copy &amp; build</li><li>Hosting &amp; backups</li><li>Unlimited small edits</li></ul>
+      </div>
+      <div class="item">
+        <div class="no">№ 2<b>Advertise</b></div>
+        <div>
+          <h3>LSA Ads</h3>
+          <p>Google Local Services Ads put you above the map pack with the Google Guaranteed badge — and you pay per lead, not per click. We run the whole program: verification, budgets, and disputes.</p>
+          <div class="tagrow"><span class="tag">Google Guaranteed</span><span class="tag olv">Pay-per-lead</span></div>
+        </div>
+        <ul class="side"><b>Included</b><li>Profile &amp; verification</li><li>Weekly budget tuning</li><li>Junk-lead disputes</li></ul>
+      </div>
+      <div class="item">
+        <div class="no">№ 3<b>Automate</b></div>
+        <div>
+          <h3>Apps &amp; AI Agents</h3>
+          <p>Custom software where it pays: estimators that quote standard jobs instantly, agents that answer after-hours calls and texts, and follow-up that never lets a warm lead go cold.</p>
+          <div class="tagrow"><span class="tag">24/7 answering</span><span class="tag olv">Instant quotes</span><span class="tag kft">Follow-up</span></div>
+        </div>
+        <ul class="side"><b>Included</b><li>Scoped to your workflow</li><li>Voice, text &amp; web</li><li>Calendar booking</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="essay">
+  <div class="wrap grid">
+    <blockquote>"Most local businesses don't need more marketing. They need the leads they already get to be <em>answered, quoted, and booked.</em>"</blockquote>
+    <div class="beliefs">
+      <div class="belief"><h4>Hand-coded, on purpose</h4><p>No page builders. Small, fast pages outrank and outconvert heavy ones — and they're cheaper to keep forever.</p></div>
+      <div class="belief"><h4>Order matters</h4><p>Ads before a good site wastes money; agents before leads automates nothing. Build → advertise → automate.</p></div>
+      <div class="belief"><h4>One accountable team</h4><p>Site, ads, and automation from one studio means no vendor finger-pointing when a lead slips.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <span class="lbl">Next step</span>
+    <h2>Tell us about your business. We'll write the plan.</h2>
+    <p>A short call, then a one-page build order — yours to keep either way.</p>
+    <a class="btn" href="mailto:brigham@saptron.com">Book a call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Key Web Design · brigham@saptron.com</span>
+    <ul>
+      <li><a href="#">Work</a></li><li><a href="#">Services</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

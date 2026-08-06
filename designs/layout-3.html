@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Web Design — Layout 3 · Grid</title>
+<meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0a; --dim:#555c58; --faint:#8a938e; --line:#e4e6e5; --bg:#ffffff;
+  --green:#00b368; --green-ink:#007a47; --aurora:#00b36822;
+  --wrap:1080px; --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-ink)}
+h2{font-size:clamp(26px,3.8vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+
+/* ruled frame — everything lives in 1px cells */
+.frame{border-left:1px solid var(--line);border-right:1px solid var(--line);max-width:var(--wrap);margin:0 auto;position:relative}
+.rule{border-top:1px solid var(--line);position:relative}
+.rule .x{position:absolute;top:-4.5px;width:9px;height:9px;color:#b9c2bd;font:9px/9px var(--mono);text-align:center}
+.rule .x.l{left:-4.5px}.rule .x.r{right:-4.5px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:#ffffffe8;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:30px;height:58px}
+.logo{font-weight:800;font-size:15px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+.logo .tri{width:0;height:0;border-left:8px solid transparent;border-right:8px solid transparent;border-bottom:14px solid var(--green)}
+.nav ul{display:flex;gap:22px;list-style:none;font-size:13.5px;font-weight:500;color:var(--dim)}
+.nav ul a:hover{color:var(--ink)}
+.nav .right{margin-left:auto;display:flex;gap:10px}
+.btn{display:inline-block;padding:9px 18px;border-radius:8px;font-size:13.5px;font-weight:600;transition:.15s;border:1px solid transparent}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:#2a2a2a}
+.btn-out{border-color:var(--line);color:var(--ink)}
+.btn-out:hover{border-color:var(--ink)}
+
+/* hero */
+.hero{padding:100px 24px 84px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:900px;height:480px;background:radial-gradient(closest-side,var(--aurora),transparent 70%)}
+.hero .mono{display:block;margin-bottom:18px}
+.hero h1{font-size:clamp(40px,6.5vw,72px);font-weight:800;letter-spacing:-.045em;line-height:1.02;position:relative}
+.hero h1 span{color:var(--green)}
+.hero p{margin:24px auto 34px;font-size:17.5px;color:var(--dim);max-width:56ch;position:relative}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* service cells */
+.cells{display:grid;grid-template-columns:repeat(3,1fr)}
+.c{padding:40px 32px;border-right:1px solid var(--line);position:relative;transition:.15s}
+.c:last-child{border-right:0}
+.c:hover{background:#fafcfb}
+.c .idx{font-family:var(--mono);font-size:11.5px;color:var(--faint);display:block;margin-bottom:26px}
+.c h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.c h3 b{color:var(--green);font-weight:800}
+.c p{font-size:14px;color:var(--dim)}
+.c .tags{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px}
+.c .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;border:1px solid var(--line);border-radius:5px;padding:4px 9px;color:var(--dim)}
+
+/* ship log */
+.log{padding:76px 32px}
+.log .head{display:flex;justify-content:space-between;align-items:end;margin-bottom:36px;gap:20px;flex-wrap:wrap}
+.entries{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.e{background:#fff;padding:26px 28px}
+.e:hover{background:#fafcfb}
+.e .mono{display:block;margin-bottom:10px;color:var(--faint)}
+.e h4{font-size:15.5px;font-weight:600;margin-bottom:6px}
+.e p{font-size:13.5px;color:var(--dim)}
+
+/* dark strip */
+.dark{background:var(--ink);color:#f4f6f5;padding:80px 32px;text-align:center;position:relative;overflow:hidden}
+.dark::before{content:"";position:absolute;bottom:-220px;left:50%;transform:translateX(-50%);width:800px;height:420px;background:radial-gradient(closest-side,#00b36833,transparent 70%)}
+.dark h2{position:relative}
+.dark p{color:#a3aca7;margin:14px auto 32px;max-width:52ch;position:relative}
+.dark .btn{position:relative;background:var(--green);color:#04120b}
+.dark .btn:hover{background:#00c975}
+.dark .mono{color:var(--green)}
+
+footer{border-top:1px solid var(--line);padding:38px 32px;font-size:13px;color:var(--faint);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer ul{display:flex;gap:20px;list-style:none}
+footer a:hover{color:var(--ink)}
+
+@media(max-width:860px){
+  .nav ul{display:none}
+  .cells{grid-template-columns:1fr}
+  .c{border-right:0;border-bottom:1px solid var(--line)}
+  .c:last-child{border-bottom:0}
+  .entries{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><span class="tri"></span>Key Web Design</a>
+    <ul>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="right">
+      <a class="btn btn-out" href="#">See work</a>
+      <a class="btn btn-ink" href="#">Start a project</a>
+    </div>
+  </div>
+</header>
+
+<div class="frame">
+
+  <section class="hero">
+    <span class="mono">key web design — build · advertise · automate</span>
+    <h1>Ship a business<br>that <span>runs itself.</span></h1>
+    <p>Websites, Local Services Ads, and AI agents — deployed as one system, by one team, for owner-run companies that don't have time for four vendors.</p>
+    <div class="ctas">
+      <a class="btn btn-ink" href="#">Start a project</a>
+      <a class="btn btn-out" href="#">Read the process</a>
+    </div>
+  </section>
+
+  <div class="rule"><span class="x l">+</span><span class="x r">+</span></div>
+
+  <section class="cells">
+    <div class="c">
+      <span class="idx">[ 01 / build ]</span>
+      <h3>Website <b>Design</b></h3>
+      <p>Hand-coded pages that load instantly and read like a straight answer to what your customer typed into Google.</p>
+      <div class="tags"><span class="tag">custom</span><span class="tag">&lt;1s load</span><span class="tag">care plans</span></div>
+    </div>
+    <div class="c">
+      <span class="idx">[ 02 / advertise ]</span>
+      <h3>LSA <b>Ads</b></h3>
+      <p>Google Local Services Ads managed weekly — Google Guaranteed badge, pay-per-lead pricing, junk leads disputed.</p>
+      <div class="tags"><span class="tag">google guaranteed</span><span class="tag">pay-per-lead</span></div>
+    </div>
+    <div class="c">
+      <span class="idx">[ 03 / automate ]</span>
+      <h3>Apps &amp; <b>AI Agents</b></h3>
+      <p>Estimators, after-hours answering, follow-up sequences — software that works your leads while you work the job.</p>
+      <div class="tags"><span class="tag">24/7 response</span><span class="tag">instant quotes</span></div>
+    </div>
+  </section>
+
+  <div class="rule"><span class="x l">+</span><span class="x r">+</span></div>
+
+  <section class="log">
+    <div class="head">
+      <div>
+        <span class="mono">recently shipped</span>
+        <h2>Built for businesses like yours.</h2>
+      </div>
+      <a class="btn btn-out" href="#">All work</a>
+    </div>
+    <div class="entries">
+      <div class="e"><span class="mono">website · services</span><h4>Commercial roofing company</h4><p>Full marketing site with lead routing, careers, and bilingual pages.</p></div>
+      <div class="e"><span class="mono">website · local</span><h4>Residential cleaning service</h4><p>Booking-first site built to convert neighborhood search traffic.</p></div>
+      <div class="e"><span class="mono">app · estimator</span><h4>Roofing quote estimator</h4><p>Instant ballpark pricing app that qualifies leads before the first call.</p></div>
+      <div class="e"><span class="mono">website · outdoors</span><h4>Alaska fishing charter</h4><p>Trip pages and season calendar designed for booking inquiries.</p></div>
+    </div>
+  </section>
+
+  <div class="rule"><span class="x l">+</span><span class="x r">+</span></div>
+
+  <section class="dark">
+    <span class="mono">deploy your growth stack</span>
+    <h2>One team. Three layers. Zero dropped leads.</h2>
+    <p>Tell us what you do and where you do it — we'll come back with the exact build order.</p>
+    <a class="btn" href="mailto:brigham@saptron.com">Get the plan</a>
+  </section>
+
+  <footer>
+    <span>© 2026 Key Web Design · brigham@saptron.com</span>
+    <ul>
+      <li><a href="#">Work</a></li><li><a href="#">Services</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+    </ul>
+  </footer>
+
+</div>
+
+</body>
+</html>
