@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Web Design — Layout 9 · Organic</title>
+<meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
+<meta name="robots" content="noindex">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfdf9; --ink:#1e3328; --dim:#5c7265; --line:#e5eee7;
+  --green:#3faf6e; --deep:#2c8a53; --soft:#e8f7ee; --sun:#ffe9b8; --leaf:#cfeeda;
+  --r:32px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.k{display:inline-block;font-size:13px;font-weight:700;color:var(--deep);background:var(--soft);border-radius:999px;padding:7px 16px}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:#fbfdf9e8;backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;gap:28px;height:72px}
+.logo{font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:50% 50% 50% 6px;background:var(--green);color:#fff;display:grid;place-items:center;font-style:normal;font-size:15px;font-weight:800}
+.nav ul{display:flex;gap:26px;list-style:none;font-size:14.5px;font-weight:600;color:var(--dim)}
+.nav ul a{transition:.15s}
+.nav ul a:hover{color:var(--deep)}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--green);color:#fff;font-weight:700;font-size:15px;transition:.18s;box-shadow:0 8px 20px -10px #3faf6e99}
+.btn:hover{background:var(--deep);transform:translateY(-2px)}
+.btn.soft{background:var(--soft);color:var(--deep);box-shadow:none}
+.btn.soft:hover{background:var(--leaf)}
+.nav .btn{margin-left:auto;padding:10px 20px}
+
+/* hero */
+.hero{padding:84px 0 40px;position:relative;overflow:hidden;text-align:center}
+.hero .blob{position:absolute;border-radius:46% 54% 60% 40%/50% 44% 56% 50%;filter:blur(2px);animation:morph 14s ease-in-out infinite alternate;z-index:0}
+.hero .b1{width:420px;height:420px;background:var(--leaf);left:-140px;top:-80px}
+.hero .b2{width:360px;height:360px;background:var(--sun);right:-120px;top:120px;animation-delay:-6s}
+@keyframes morph{
+  0%{border-radius:46% 54% 60% 40%/50% 44% 56% 50%;transform:rotate(0)}
+  100%{border-radius:58% 42% 44% 56%/42% 58% 42% 58%;transform:rotate(14deg)}
+}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(38px,5.8vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:17ch;margin:20px auto 0}
+.hero h1 em{font-style:normal;color:var(--deep);position:relative}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:.32em;background:var(--leaf);z-index:-1;border-radius:6px}
+.hero p{margin:24px auto 34px;font-size:18px;color:var(--dim);max-width:52ch}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* wave divider */
+.wave{display:block;width:100%;height:70px;margin-top:50px}
+
+/* services — petals */
+.svc{background:var(--soft);padding:30px 0 90px}
+.petals{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.petal{background:#fff;border-radius:var(--r);padding:34px 28px;box-shadow:0 14px 34px -22px #2c8a5340;transition:.2s;position:relative}
+.petal:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 24px 44px -20px #2c8a5355}
+.petal .ic{width:52px;height:52px;border-radius:50% 50% 50% 8px;display:grid;place-items:center;font-size:22px;margin-bottom:20px;background:var(--leaf)}
+.petal:nth-child(2) .ic{background:var(--sun)}
+.petal:nth-child(3) .ic{background:#dcebff}
+.petal h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.petal p{font-size:14.5px;color:var(--dim)}
+.petal ul{list-style:none;margin-top:16px;font-size:14px;color:var(--dim);display:grid;gap:8px}
+.petal li::before{content:"🌱 ";font-size:12px}
+.petal .num{position:absolute;top:24px;right:26px;font-weight:800;color:var(--leaf);font-size:26px}
+
+/* promise strip */
+.prom{padding:90px 0;text-align:center}
+.prom .row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.p{background:var(--bg);border:2px dashed var(--leaf);border-radius:26px;padding:30px 24px}
+.p b{font-size:clamp(26px,3.2vw,36px);font-weight:800;color:var(--deep);display:block;margin-bottom:6px}
+.p span{font-size:14px;color:var(--dim)}
+
+/* cta */
+.cta{padding:20px 0 100px}
+.cta .bowl{background:linear-gradient(135deg,var(--green),var(--deep));border-radius:44px;color:#fff;text-align:center;padding:66px 36px;position:relative;overflow:hidden}
+.cta .bowl::before,.cta .bowl::after{content:"";position:absolute;border-radius:46% 54% 60% 40%/50% 44% 56% 50%;background:#ffffff14;animation:morph 16s ease-in-out infinite alternate}
+.cta .bowl::before{width:300px;height:300px;left:-90px;bottom:-120px}
+.cta .bowl::after{width:240px;height:240px;right:-70px;top:-90px;animation-delay:-8s}
+.cta h2{color:#fff;position:relative}
+.cta p{color:#dcf5e7;margin:14px 0 30px;position:relative}
+.cta .btn{background:#fff;color:var(--deep);position:relative;box-shadow:none}
+
+footer{padding:0 0 50px;text-align:center;font-size:14px;color:var(--dim)}
+footer ul{display:flex;gap:22px;list-style:none;justify-content:center;margin-top:10px}
+footer a:hover{color:var(--deep)}
+
+/* motion */
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero .k{animation:up .7s ease both}
+.hero h1{animation:up .8s .1s ease both}
+.hero p{animation:up .8s .22s ease both}
+.hero .ctas{animation:up .8s .34s ease both}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .d1{transition-delay:.13s}.js .d2{transition-delay:.26s}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+@media(max-width:880px){
+  .nav ul{display:none}
+  .petals,.prom .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><i>K</i>Key Web Design</a>
+    <ul>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a class="btn" href="#">Start a project</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="wrap">
+    <span class="k">Websites · LSA Ads · AI Agents</span>
+    <h1>Grow a business that <em>answers back.</em></h1>
+    <p>We plant the website, feed it with Google Local Services Ads, and train an AI agent to tend every lead — day, night, and weekends.</p>
+    <div class="ctas">
+      <a class="btn" href="#">Start a project</a>
+      <a class="btn soft" href="#">See how it grows</a>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,45 L1440,70 L0,70 Z" fill="#e8f7ee"/></svg>
+</section>
+
+<section class="svc">
+  <div class="wrap">
+    <span class="k" style="background:#fff">What we tend</span>
+    <h2>Three services, one healthy funnel.</h2>
+    <div class="petals">
+      <div class="petal reveal">
+        <span class="num">01</span>
+        <div class="ic">🌿</div>
+        <h3>Website Design</h3>
+        <p>Hand-coded, quick as a handshake, and written for the way neighbors actually search.</p>
+        <ul><li>Custom design, no templates</li><li>Loads in under a second</li><li>Care plans keep it thriving</li></ul>
+      </div>
+      <div class="petal reveal d1">
+        <span class="num">02</span>
+        <div class="ic">☀️</div>
+        <h3>LSA Ads</h3>
+        <p>Google Local Services Ads put you top-of-page with the Google Guaranteed badge — pay per lead, never per click.</p>
+        <ul><li>Setup &amp; verification handled</li><li>Budgets tuned weekly</li><li>Junk leads disputed for you</li></ul>
+      </div>
+      <div class="petal reveal d2">
+        <span class="num">03</span>
+        <div class="ic">🤖</div>
+        <h3>Apps &amp; AI Agents</h3>
+        <p>An AI agent that answers missed calls in seconds, quotes standard jobs, books estimates, and follows up gently — but relentlessly.</p>
+        <ul><li>24/7 voice &amp; text</li><li>Instant-quote estimators</li><li>Escalates to you when it matters</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prom">
+  <div class="wrap">
+    <span class="k">Our promises</span>
+    <h2>Numbers we hold ourselves to.</h2>
+    <div class="row">
+      <div class="p reveal"><b>&lt;1s</b><span>page-load target on every build</span></div>
+      <div class="p reveal d1"><b>Top 3</b><span>LSA position we manage toward</span></div>
+      <div class="p reveal d2"><b>24/7</b><span>your AI agent never clocks out</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="bowl reveal">
+      <h2>Let's grow something that works while you rest.</h2>
+      <p>One friendly call — we'll sketch your site, ads, and agent, no strings attached.</p>
+      <a class="btn" href="mailto:brigham@saptron.com">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Key Web Design · brigham@saptron.com</span>
+  <ul>
+    <li><a href="#">Work</a></li><li><a href="#">Services</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){const el=e.target;el.classList.add('in');el.addEventListener('transitionend',()=>el.classList.remove('reveal','in'),{once:true});io.unobserve(el)}},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

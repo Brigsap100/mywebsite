@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Key Web Design — Layout 8 · Bento</title>
+<meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
+<meta name="robots" content="noindex">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2ef; --tile:#ffffff; --ink:#101b14; --dim:#57685e; --line:#dfe7e1;
+  --green:#0e9f6e; --deep:#0a7a54; --bright:#31d493; --pale:#d9f5e9; --dark:#12241a;
+  --r:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px}
+h2{font-size:clamp(24px,3.2vw,34px);font-weight:800;letter-spacing:-.025em;line-height:1.12}
+
+/* floating pill nav */
+header{position:sticky;top:14px;z-index:50;padding:0 22px}
+.nav{max-width:1096px;margin:0 auto;display:flex;align-items:center;gap:24px;background:#ffffffd9;backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:10px 12px 10px 20px;box-shadow:0 10px 30px -18px #12241a4d}
+.logo{font-weight:800;font-size:15.5px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px}
+.logo i{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--bright),var(--deep));color:#fff;display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700}
+.nav ul{display:flex;gap:20px;list-style:none;font-size:13.5px;font-weight:500;color:var(--dim);margin-left:8px}
+.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-block;padding:10px 20px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;font-size:13.5px;transition:.16s}
+.btn:hover{background:var(--deep);transform:translateY(-1px)}
+.btn.grn{background:var(--green)}
+.btn.grn:hover{background:var(--deep)}
+.nav .btn{margin-left:auto}
+
+/* intro */
+.intro{text-align:center;padding:76px 0 40px}
+.intro .k{font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green)}
+.intro h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;letter-spacing:-.035em;line-height:1.05;max-width:20ch;margin:14px auto 0}
+.intro h1 em{font-style:normal;color:var(--green)}
+
+/* the bento */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;padding:44px 0 90px}
+.t{background:var(--tile);border:1px solid var(--line);border-radius:var(--r);padding:28px;position:relative;overflow:hidden;transition:.2s}
+.t:hover{transform:translateY(-4px);box-shadow:0 20px 44px -22px #12241a55}
+.t .k{font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:12px}
+.t h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+.t p{font-size:14px;color:var(--dim)}
+.t.s3{grid-column:span 3}
+.t.s2{grid-column:span 2}
+.t.s4{grid-column:span 4}
+.t.s6{grid-column:span 6}
+.t.dark{background:var(--dark);color:#eef7f1;border-color:var(--dark)}
+.t.dark p{color:#a9c6b6}
+.t.dark .k{color:var(--bright)}
+.t.green{background:linear-gradient(135deg,var(--green),var(--deep));color:#fff;border-color:transparent}
+.t.green p{color:#d6f3e6}
+.t.green .k{color:#b6f0d8}
+.t.pale{background:var(--pale);border-color:#c4ecd9}
+.big{font-size:clamp(30px,3.6vw,44px);font-weight:800;letter-spacing:-.03em;color:var(--green)}
+.t.dark .big,.t.green .big{color:#fff}
+.t .arrow{position:absolute;right:22px;bottom:18px;font-weight:700;color:var(--green);opacity:0;transform:translateX(-6px);transition:.2s}
+.t:hover .arrow{opacity:1;transform:none}
+.t.dark .arrow,.t.green .arrow{color:#fff}
+.chat{display:grid;gap:8px;margin-top:16px}
+.chat .m{max-width:88%;padding:9px 13px;border-radius:12px;font-size:13px}
+.chat .them{background:#ffffff22;border-bottom-left-radius:4px}
+.chat .me{background:#fff;color:var(--ink);margin-left:auto;border-bottom-right-radius:4px;font-weight:500}
+.list{list-style:none;margin-top:14px;font-size:13.5px;color:var(--dim);display:grid;gap:7px}
+.list li::before{content:"✓ ";color:var(--green);font-weight:700}
+.t.green .list{color:#d6f3e6}
+.t.green .list li::before{color:#fff}
+.logo-row{display:flex;gap:26px;flex-wrap:wrap;align-items:center;font-weight:700;color:#9fb3a8;font-size:15px;margin-top:10px}
+
+footer{padding:0 0 60px;text-align:center;font-size:13.5px;color:var(--dim)}
+footer ul{display:flex;gap:22px;list-style:none;justify-content:center;margin-top:10px}
+footer a:hover{color:var(--green)}
+
+/* motion */
+@keyframes pop{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+.intro .k,.intro h1{animation:pop .7s cubic-bezier(.2,.7,.2,1) both}
+.intro h1{animation-delay:.1s}
+.js .reveal{opacity:0;transform:translateY(20px) scale(.97);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .d1{transition-delay:.08s}.js .d2{transition-delay:.16s}.js .d3{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+@media(max-width:900px){
+  .nav ul{display:none}
+  .t.s3,.t.s2,.t.s4,.t.s6{grid-column:span 6}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#"><i>K</i>Key Web Design</a>
+    <ul>
+      <li><a href="#">Work</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a class="btn grn" href="#">Start a project</a>
+  </div>
+</header>
+
+<section class="intro wrap">
+  <span class="k">Websites · LSA Ads · AI Agents</span>
+  <h1>Everything a local business needs to <em>win online.</em> In one box.</h1>
+</section>
+
+<div class="wrap">
+  <div class="bento">
+
+    <div class="t s4 green reveal">
+      <span class="k">03 · Automate — the headliner</span>
+      <h3>An AI agent that never misses a lead</h3>
+      <p>Trained on your services, prices, and service area. It answers missed calls by text in seconds, quotes standard jobs, books estimates, and follows up until they answer.</p>
+      <ul class="list">
+        <li>24/7 voice &amp; text answering</li>
+        <li>Instant-quote estimators</li>
+        <li>Hands off to you the moment it should</li>
+      </ul>
+      <span class="arrow">Meet the agents →</span>
+    </div>
+
+    <div class="t s2 dark reveal d1">
+      <span class="k">Live demo</span>
+      <div class="chat">
+        <div class="m them">My roof is leaking — anyone there? It's 9pm…</div>
+        <div class="m me">We've got you. I can book a free inspection for tomorrow 8am. What's the address?</div>
+      </div>
+      <p style="margin-top:12px;font-size:12px">Replied in 4 seconds · while you slept</p>
+    </div>
+
+    <div class="t s3 reveal">
+      <span class="k">01 · Build</span>
+      <h3>Website Design</h3>
+      <p>Hand-coded, loads in under a second, written for local search intent — then maintained forever with monthly care plans.</p>
+      <span class="arrow">See builds →</span>
+    </div>
+
+    <div class="t s3 reveal d1">
+      <span class="k">02 · Advertise</span>
+      <h3>LSA Ads</h3>
+      <p>Google Local Services Ads with the Google Guaranteed badge. Top of the page, pay-per-lead, tuned weekly, junk leads disputed.</p>
+      <span class="arrow">See the program →</span>
+    </div>
+
+    <div class="t s2 pale reveal"><span class="k">Speed</span><span class="big">&lt;1s</span><p>load target on every page we ship</p></div>
+    <div class="t s2 pale reveal d1"><span class="k">Placement</span><span class="big">Top 3</span><p>LSA position we manage toward</p></div>
+    <div class="t s2 pale reveal d2"><span class="k">Coverage</span><span class="big">24/7</span><p>your agent keeps office hours you can't</p></div>
+
+    <div class="t s4 reveal">
+      <span class="k">Who it's for</span>
+      <h3>Owner-run businesses that can't babysit a phone</h3>
+      <p>Roofers, cleaners, charters, contractors — if your best salesperson is on a ladder at 2pm, this stack was built for you.</p>
+      <div class="logo-row"><span>Roofing</span><span>Cleaning</span><span>Charters</span><span>Contractors</span></div>
+    </div>
+
+    <div class="t s2 dark reveal d1">
+      <span class="k">Why one team</span>
+      <h3>No finger-pointing</h3>
+      <p>Site, ads, and AI built together — every layer feeds the next.</p>
+    </div>
+
+    <div class="t s6 green reveal" style="text-align:center;padding:52px 28px">
+      <h2 style="color:#fff">Ready when your customers are. Which is always.</h2>
+      <p style="max-width:52ch;margin:10px auto 26px">One call — we'll map your site, ads, and agent, and tell you what pays back first.</p>
+      <a class="btn" style="background:#fff;color:var(--deep)" href="mailto:brigham@saptron.com">Book the call</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Key Web Design · brigham@saptron.com</span>
+  <ul>
+    <li><a href="#">Work</a></li><li><a href="#">Services</a></li><li><a href="#">Pricing</a></li><li><a href="#">About</a></li><li><a href="#">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){const el=e.target;el.classList.add('in');el.addEventListener('transitionend',()=>el.classList.remove('reveal','in'),{once:true});io.unobserve(el)}},{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
