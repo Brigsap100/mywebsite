@@ -6,6 +6,7 @@
 <title>Key Web Design — Layout 5 · Forest (AI-first)</title>
 <meta name="description" content="Design demo — Key Web Design: AI agents, websites, LSA ads.">
 <meta name="robots" content="noindex">
+<script>document.documentElement.className+=' js'</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -112,6 +113,29 @@ footer a:hover{color:var(--lime)}
   .b.hero-card{grid-row:auto}
   .caps .grid{grid-template-columns:1fr 1fr}
 }
+
+/* motion */
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero .pill{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation:up .85s .1s cubic-bezier(.2,.7,.2,1) both}
+.hero p{animation:up .85s .24s cubic-bezier(.2,.7,.2,1) both}
+.hero .ctas{animation:up .85s .38s cubic-bezier(.2,.7,.2,1) both}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .d1{transition-delay:.12s}.js .d2{transition-delay:.24s}.js .d3{transition-delay:.36s}
+.js .chat>*{opacity:0;transform:translateY(12px) scale(.98);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.7,.2,1)}
+.js .chat.in>*{opacity:1;transform:none}
+.js .chat.in>*:nth-child(1){transition-delay:.2s}
+.js .chat.in>*:nth-child(2){transition-delay:.7s}
+.js .chat.in>*:nth-child(3){transition-delay:1.3s}
+.js .chat.in>*:nth-child(4){transition-delay:2s}
+.chat .dot{animation:beat 1.6s ease-in-out infinite}
+@keyframes beat{0%,100%{box-shadow:0 0 0 0 #9fe87066}50%{box-shadow:0 0 0 6px #9fe87000}}
+.btn:hover{transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
@@ -148,7 +172,7 @@ footer a:hover{color:var(--lime)}
       <a class="btn btn-ghost" href="#">See the full stack</a>
     </div>
 
-    <div class="chat">
+    <div class="chat reveal">
       <div class="m them">Hi — my roof is leaking near the chimney. Are you still open?</div>
       <div class="meta"><span>Missed call → text · 9:04 PM</span></div>
       <div class="m ai">We've got you. I can have a crew member call you first thing tomorrow — or book a free inspection right now. What's the address?</div>
@@ -163,7 +187,7 @@ footer a:hover{color:var(--lime)}
     <h2>The agent is the closer.<br>The site and the ads feed it.</h2>
     <p class="lead">Every layer works alone — together they compound. We build them in the order that pays fastest for your business.</p>
     <div class="bento">
-      <div class="b hero-card">
+      <div class="b hero-card reveal">
         <span class="k">Apps &amp; AI Agents</span>
         <h3>An employee that never sleeps</h3>
         <p>Custom AI agents trained on your services, prices, and service area — answering calls and texts, quoting standard jobs, booking estimates onto your real calendar.</p>
@@ -175,19 +199,19 @@ footer a:hover{color:var(--lime)}
         </ul>
         <span class="cta-mini">Meet the agents →</span>
       </div>
-      <div class="b">
+      <div class="b reveal d1">
         <span class="k">Website Design</span>
         <h3>The storefront</h3>
         <p>Hand-coded, loads in under a second, written to convert local search into calls. Maintained monthly so it never goes stale.</p>
         <span class="cta-mini">See builds →</span>
       </div>
-      <div class="b">
+      <div class="b reveal d2">
         <span class="k">LSA Ads</span>
         <h3>The firehose</h3>
         <p>Google Local Services Ads with the Google Guaranteed badge — top of the page, pay-per-lead, tuned weekly by us.</p>
         <span class="cta-mini">See the ad program →</span>
       </div>
-      <div class="b" style="grid-column:span 2">
+      <div class="b reveal d3" style="grid-column:span 2">
         <span class="k">Why one team</span>
         <h3>No vendor finger-pointing</h3>
         <p>Site, ads, and AI from one studio means every layer is built to feed the next — the ad click lands on a page the agent already knows how to close.</p>
@@ -201,17 +225,17 @@ footer a:hover{color:var(--lime)}
     <span class="pill">What the agent handles</span>
     <h2>Hire it once. It shows up every shift.</h2>
     <div class="grid">
-      <div class="cap"><b>4s</b><h4>First response</h4><p>Missed calls get a text back before the customer dials your competitor.</p></div>
-      <div class="cap"><b>24/7</b><h4>Always on</h4><p>Nights, weekends, holidays — the agent keeps office hours you never could.</p></div>
-      <div class="cap"><b>100%</b><h4>Follow-up rate</h4><p>Every open lead gets chased until it books, declines, or asks to stop.</p></div>
-      <div class="cap"><b>Yours</b><h4>Your voice, your rules</h4><p>Trained on your services and prices; escalates to a human exactly when you say.</p></div>
+      <div class="cap reveal"><b>4s</b><h4>First response</h4><p>Missed calls get a text back before the customer dials your competitor.</p></div>
+      <div class="cap reveal d1"><b>24/7</b><h4>Always on</h4><p>Nights, weekends, holidays — the agent keeps office hours you never could.</p></div>
+      <div class="cap reveal d2"><b>100%</b><h4>Follow-up rate</h4><p>Every open lead gets chased until it books, declines, or asks to stop.</p></div>
+      <div class="cap reveal d3"><b>Yours</b><h4>Your voice, your rules</h4><p>Trained on your services and prices; escalates to a human exactly when you say.</p></div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <div class="box">
+    <div class="box reveal">
       <h2>Give your business the employee it's been missing.</h2>
       <p>A short call, a live demo of an agent answering as your company — then you decide.</p>
       <a class="btn" href="mailto:brigham@saptron.com">Book the demo</a>
@@ -228,5 +252,9 @@ footer a:hover{color:var(--lime)}
   </div>
 </footer>
 
+<script>
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){const el=e.target;el.classList.add('in');if(!el.classList.contains('chat'))el.addEventListener('transitionend',()=>el.classList.remove('reveal','in'),{once:true});io.unobserve(el)}},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <title>Key Web Design — Layout 1 · Gradient</title>
 <meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
 <meta name="robots" content="noindex">
+<script>document.documentElement.className+=' js'</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -99,6 +100,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer ul{display:flex;gap:22px;list-style:none}
 footer a:hover{color:var(--green)}
 
+/* motion */
+@keyframes up{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero .eyebrow,.hero h1,.hero p,.hero .ctas{animation:up .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.08s}.hero p{animation-delay:.18s}.hero .ctas{animation-delay:.3s}
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .d1{transition-delay:.12s}.js .d2{transition-delay:.24s}.js .d3{transition-delay:.36s}
+.btn:hover{transform:translateY(-2px)}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
 @media(max-width:860px){
   .nav ul{display:none}
   .bento,.band .wrap,.steps{grid-template-columns:1fr}
@@ -138,7 +151,7 @@ footer a:hover{color:var(--green)}
 <section class="logos">
   <div class="wrap">
     <p>Trusted by owner-run businesses</p>
-    <div class="row"><span>Roofing</span><span>Cleaning</span><span>Fishing Charters</span><span>Contractors</span><span>Home Services</span></div>
+    <div class="row reveal"><span>Roofing</span><span>Cleaning</span><span>Fishing Charters</span><span>Contractors</span><span>Home Services</span></div>
   </div>
 </section>
 
@@ -148,19 +161,19 @@ footer a:hover{color:var(--green)}
     <h2>Build. Advertise. Automate.</h2>
     <p class="sub">Three services, in the order your business actually grows.</p>
     <div class="bento">
-      <div class="card">
+      <div class="card reveal">
         <span class="num">01 — Build</span>
         <h3>Website Design</h3>
         <p>Hand-coded, fast-loading sites that turn visitors into phone calls — then maintained with monthly care plans.</p>
         <ul><li>Custom design, no templates</li><li>Built to load in under a second</li><li>Hosting, backups &amp; edits handled</li></ul>
       </div>
-      <div class="card">
+      <div class="card reveal d1">
         <span class="num">02 — Advertise</span>
         <h3>LSA Ads</h3>
         <p>Google Local Services Ads managed for you — Google Guaranteed badge, pay-per-lead, top of the search page.</p>
         <ul><li>Google Guaranteed setup</li><li>Only pay for real leads</li><li>Dispute handling &amp; weekly tuning</li></ul>
       </div>
-      <div class="card">
+      <div class="card reveal d2">
         <span class="num">03 — Automate</span>
         <h3>Apps &amp; AI Agents</h3>
         <p>Custom tools and AI agents that quote jobs, answer after-hours calls, book estimates, and follow up automatically.</p>
@@ -172,9 +185,9 @@ footer a:hover{color:var(--green)}
 
 <section class="band">
   <div class="wrap">
-    <div><b>&lt; 1s</b><span>page-load target on every build</span></div>
-    <div><b>Top 3</b><span>LSA position we manage toward</span></div>
-    <div><b>24/7</b><span>AI agents answering when you can't</span></div>
+    <div class="reveal"><b>&lt; 1s</b><span>page-load target on every build</span></div>
+    <div class="reveal d1"><b>Top 3</b><span>LSA position we manage toward</span></div>
+    <div class="reveal d2"><b>24/7</b><span>AI agents answering when you can't</span></div>
   </div>
 </section>
 
@@ -183,17 +196,17 @@ footer a:hover{color:var(--green)}
     <span class="eyebrow">How it works</span>
     <h2>From handshake to headline numbers.</h2>
     <div class="steps">
-      <div class="step"><h4>Discover</h4><p>One call. We learn the business, the customers, and what a good month looks like.</p></div>
-      <div class="step"><h4>Build</h4><p>Your site designed, written, and live — reviewed with you at every step.</p></div>
-      <div class="step"><h4>Launch ads</h4><p>LSA profile verified, badge earned, budget tuned to your service area.</p></div>
-      <div class="step"><h4>Automate</h4><p>Agents and apps take over the repetitive work so leads never go cold.</p></div>
+      <div class="step reveal"><h4>Discover</h4><p>One call. We learn the business, the customers, and what a good month looks like.</p></div>
+      <div class="step reveal d1"><h4>Build</h4><p>Your site designed, written, and live — reviewed with you at every step.</p></div>
+      <div class="step reveal d2"><h4>Launch ads</h4><p>LSA profile verified, badge earned, budget tuned to your service area.</p></div>
+      <div class="step reveal d3"><h4>Automate</h4><p>Agents and apps take over the repetitive work so leads never go cold.</p></div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <div class="box">
+    <div class="box reveal">
       <h2>Ready to be the easiest company to hire in town?</h2>
       <p>Tell us about your business — we'll show you exactly what we'd build first.</p>
       <a class="btn" href="mailto:brigham@saptron.com">Get a free plan</a>
@@ -210,5 +223,9 @@ footer a:hover{color:var(--green)}
   </div>
 </footer>
 
+<script>
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){const el=e.target;el.classList.add('in');el.addEventListener('transitionend',()=>el.classList.remove('reveal','in'),{once:true});io.unobserve(el)}},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>

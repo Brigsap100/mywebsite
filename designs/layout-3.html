@@ -6,6 +6,7 @@
 <title>Key Web Design — Layout 3 · Grid</title>
 <meta name="description" content="Design demo — Key Web Design: websites, LSA ads, apps &amp; AI agents.">
 <meta name="robots" content="noindex">
+<script>document.documentElement.className+=' js'</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -93,6 +94,23 @@ footer a:hover{color:var(--ink)}
   .c:last-child{border-bottom:0}
   .entries{grid-template-columns:1fr}
 }
+
+/* motion */
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero .mono{animation:up .7s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation:up .8s .1s cubic-bezier(.2,.7,.2,1) both}
+.hero p{animation:up .8s .22s cubic-bezier(.2,.7,.2,1) both}
+.hero .ctas{animation:up .8s .34s cubic-bezier(.2,.7,.2,1) both}
+@keyframes aur{from{opacity:.65;transform:translateX(-50%) scale(1)}to{opacity:1;transform:translateX(-50%) scale(1.15)}}
+.hero::before{animation:aur 7s ease-in-out infinite alternate}
+.dark::before{animation:aur 7s ease-in-out infinite alternate}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .d1{transition-delay:.12s}.js .d2{transition-delay:.24s}.js .d3{transition-delay:.36s}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
@@ -129,19 +147,19 @@ footer a:hover{color:var(--ink)}
   <div class="rule"><span class="x l">+</span><span class="x r">+</span></div>
 
   <section class="cells">
-    <div class="c">
+    <div class="c reveal">
       <span class="idx">[ 01 / build ]</span>
       <h3>Website <b>Design</b></h3>
       <p>Hand-coded pages that load instantly and read like a straight answer to what your customer typed into Google.</p>
       <div class="tags"><span class="tag">custom</span><span class="tag">&lt;1s load</span><span class="tag">care plans</span></div>
     </div>
-    <div class="c">
+    <div class="c reveal d1">
       <span class="idx">[ 02 / advertise ]</span>
       <h3>LSA <b>Ads</b></h3>
       <p>Google Local Services Ads managed weekly — Google Guaranteed badge, pay-per-lead pricing, junk leads disputed.</p>
       <div class="tags"><span class="tag">google guaranteed</span><span class="tag">pay-per-lead</span></div>
     </div>
-    <div class="c">
+    <div class="c reveal d2">
       <span class="idx">[ 03 / automate ]</span>
       <h3>Apps &amp; <b>AI Agents</b></h3>
       <p>Estimators, after-hours answering, follow-up sequences — software that works your leads while you work the job.</p>
@@ -152,7 +170,7 @@ footer a:hover{color:var(--ink)}
   <div class="rule"><span class="x l">+</span><span class="x r">+</span></div>
 
   <section class="log">
-    <div class="head">
+    <div class="head reveal">
       <div>
         <span class="mono">recently shipped</span>
         <h2>Built for businesses like yours.</h2>
@@ -160,10 +178,10 @@ footer a:hover{color:var(--ink)}
       <a class="btn btn-out" href="#">All work</a>
     </div>
     <div class="entries">
-      <div class="e"><span class="mono">website · services</span><h4>Commercial roofing company</h4><p>Full marketing site with lead routing, careers, and bilingual pages.</p></div>
-      <div class="e"><span class="mono">website · local</span><h4>Residential cleaning service</h4><p>Booking-first site built to convert neighborhood search traffic.</p></div>
-      <div class="e"><span class="mono">app · estimator</span><h4>Roofing quote estimator</h4><p>Instant ballpark pricing app that qualifies leads before the first call.</p></div>
-      <div class="e"><span class="mono">website · outdoors</span><h4>Alaska fishing charter</h4><p>Trip pages and season calendar designed for booking inquiries.</p></div>
+      <div class="e reveal"><span class="mono">website · services</span><h4>Commercial roofing company</h4><p>Full marketing site with lead routing, careers, and bilingual pages.</p></div>
+      <div class="e reveal d1"><span class="mono">website · local</span><h4>Residential cleaning service</h4><p>Booking-first site built to convert neighborhood search traffic.</p></div>
+      <div class="e reveal d2"><span class="mono">app · estimator</span><h4>Roofing quote estimator</h4><p>Instant ballpark pricing app that qualifies leads before the first call.</p></div>
+      <div class="e reveal d3"><span class="mono">website · outdoors</span><h4>Alaska fishing charter</h4><p>Trip pages and season calendar designed for booking inquiries.</p></div>
     </div>
   </section>
 
@@ -185,5 +203,9 @@ footer a:hover{color:var(--ink)}
 
 </div>
 
+<script>
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){const el=e.target;el.classList.add('in');el.addEventListener('transitionend',()=>el.classList.remove('reveal','in'),{once:true});io.unobserve(el)}},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
