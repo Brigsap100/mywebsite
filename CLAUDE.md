@@ -10,7 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 14 concepts exist: layouts 1–5 (Stripe/Linear/Vercel/Anthropic/Wise archetypes), 1a/1b/1d/1e (Gradient-series palette riffs; 1c was rejected & deleted — owner dislikes dark full-page themes), 6–10 (Split/Bold/Bento/Organic/Glass). Green is the pinned color direction; 1e is the one sanctioned blue.
 - **No confirmed business facts** — all stats/response times are illustrative filler; never present them as real, never name clients (Kodiak, JHansen, Alaskan Anglers) in demos without owner approval. Keep the demo-content disclaimer on the gallery.
 - All pages honor `prefers-reduced-motion` and stay readable with JS disabled (`html.js` gate + IntersectionObserver reveals).
-- KNOWN ISSUE: GitHub Pages legacy builder hangs/fails on every build for this repo (predates the showcase). Fix ready: commit `.github/workflows/pages.yml` (needs `gh auth refresh -s workflow` first, then set Pages build_type=workflow via `gh api -X PUT repos/Brigsap100/mywebsite/pages -f build_type=workflow`).
+- Deploys via GitHub Actions (`.github/workflows/pages.yml`, Pages build_type=workflow) — live at https://brigsap100.github.io/mywebsite/designs/. Push to `main` triggers deploy; check `gh run list --workflow=pages.yml` if pages look stale.
 
 Everything below describes the legacy Kodiak mirror at the repo root — do not disturb it.
 
