@@ -36,7 +36,7 @@ One team, whole stack: Key Web Design builds the website, runs the Google Local 
 
 - Studio name: **Key Web Design** (owner Brigham Nash, brigham@saptron.com).
 - Tagline in use: "We build websites. Then we keep them working."
-- Green is the binding color direction for the current concept series (user-pinned); one deliberate blue variant (layout-1e) exists by request. Dark full-page themes were rejected for the Gradient series (layout-1c was removed).
+- Green is the binding color direction for the current concept series (user-pinned); two deliberate blue variants (layout-1e, layout-9f) exist by request. The owner named layout-9 (Organic) a favorite — the 9a–9f riff series grew from it. Dark full-page themes were rejected for the Gradient series (layout-1c was removed).
 - Services always presented as: Website Design, LSA Ads (Google Local Services Ads), Apps & AI Agents.
 
 ## Evidence on Hand
