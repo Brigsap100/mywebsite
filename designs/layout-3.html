@@ -12,21 +12,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0a0a0a; --dim:#555c58; --faint:#8a938e; --line:#e4e6e5; --bg:#ffffff;
+  --ink:#0a0a0a; --dim:#555c58; --faint:#6c756f; --line:#e4e6e5; --bg:#ffffff;
   --green:#00b368; --green-ink:#007a47; --aurora:#00b36822;
   --wrap:1080px; --mono:'JetBrains Mono',ui-monospace,monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--green-ink);outline-offset:3px;border-radius:6px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 .mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--green-ink)}
-h2{font-size:clamp(26px,3.8vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.12}
+h2{font-size:clamp(26px,3.8vw,38px);font-weight:800;letter-spacing:-.03em;line-height:1.12;text-wrap:balance}
 
 /* ruled frame — everything lives in 1px cells */
 .frame{border-left:1px solid var(--line);border-right:1px solid var(--line);max-width:var(--wrap);margin:0 auto;position:relative}
 .rule{border-top:1px solid var(--line);position:relative}
-.rule .x{position:absolute;top:-4.5px;width:9px;height:9px;color:#b9c2bd;font:9px/9px var(--mono);text-align:center}
+.rule .x{position:absolute;top:-4.5px;width:9px;height:9px;color:#b9c2bd;font:9px/9px var(--mono);text-align:center;transition:color .6s ease}
+.rule.lit .x{color:var(--green)}
 .rule .x.l{left:-4.5px}.rule .x.r{right:-4.5px}
 
 /* nav */
@@ -48,7 +50,7 @@ header{position:sticky;top:0;z-index:50;background:#ffffffe8;backdrop-filter:blu
 .hero::before{content:"";position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:900px;height:480px;background:radial-gradient(closest-side,var(--aurora),transparent 70%)}
 .hero .mono{display:block;margin-bottom:18px}
 .hero h1{font-size:clamp(40px,6.5vw,72px);font-weight:800;letter-spacing:-.045em;line-height:1.02;position:relative}
-.hero h1 span{color:var(--green)}
+.hero h1 span{color:var(--green-ink)}
 .hero p{margin:24px auto 34px;font-size:17.5px;color:var(--dim);max-width:56ch;position:relative}
 .hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
@@ -59,7 +61,7 @@ header{position:sticky;top:0;z-index:50;background:#ffffffe8;backdrop-filter:blu
 .c:hover{background:#fafcfb}
 .c .idx{font-family:var(--mono);font-size:11.5px;color:var(--faint);display:block;margin-bottom:26px}
 .c h3{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
-.c h3 b{color:var(--green);font-weight:800}
+.c h3 b{color:var(--green-ink);font-weight:800}
 .c p{font-size:14px;color:var(--dim)}
 .c .tags{margin-top:20px;display:flex;flex-wrap:wrap;gap:7px}
 .c .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;border:1px solid var(--line);border-radius:5px;padding:4px 9px;color:var(--dim)}
@@ -108,7 +110,7 @@ footer a:hover{color:var(--ink)}
 .js .reveal.in{opacity:1;transform:none}
 .js .d1{transition-delay:.12s}.js .d2{transition-delay:.24s}.js .d3{transition-delay:.36s}
 @media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
+  *,::before,::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
 }
 </style>
@@ -206,6 +208,8 @@ footer a:hover{color:var(--ink)}
 <script>
 const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){const el=e.target;el.classList.add('in');el.addEventListener('transitionend',()=>el.classList.remove('reveal','in'),{once:true});io.unobserve(el)}},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const io2=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('lit');io2.unobserve(e.target)}},{rootMargin:'0px 0px -18% 0px'});
+document.querySelectorAll('.rule').forEach(el=>io2.observe(el));
 </script>
 </body>
 </html>

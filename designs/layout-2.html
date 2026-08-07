@@ -13,15 +13,16 @@
 <style>
 :root{
   --bg:#0a0c0b; --panel:#101412; --line:#ffffff14; --line-2:#ffffff22;
-  --txt:#f2f6f3; --dim:#9fb0a6; --dim-2:#6c7d73;
+  --txt:#f2f6f3; --dim:#9fb0a6; --dim-2:#7d9084;
   --em:#3ecf8e; --em-deep:#26996a; --glow:#3ecf8e2e;
   --wrap:1060px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--em);outline-offset:3px;border-radius:6px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-h2{font-size:clamp(26px,3.6vw,36px);font-weight:600;letter-spacing:-.025em;line-height:1.15}
+h2{font-size:clamp(26px,3.6vw,36px);font-weight:600;letter-spacing:-.025em;line-height:1.15;text-wrap:balance}
 .dim{color:var(--dim)}
 .chip{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:500;color:var(--em);background:#3ecf8e14;border:1px solid #3ecf8e33;border-radius:999px;padding:5px 13px}
 .chip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--em);box-shadow:0 0 8px var(--em)}
@@ -71,7 +72,8 @@ header{position:sticky;top:0;z-index:50;background:#0a0c0bcc;backdrop-filter:blu
 .cell .more{display:inline-block;margin-top:18px;font-size:13.5px;color:var(--em)}
 
 /* deep dives */
-.deep{padding:40px 0 90px;display:grid;gap:80px}
+.deep{padding:40px 0 90px}
+.deep .wrap{display:grid;gap:80px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .row:nth-child(even) .txt{order:2}
 .row h3{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:14px 0 12px}
@@ -125,8 +127,9 @@ footer a:hover{color:var(--em)}
 .js .reveal.in{opacity:1;transform:none}
 .js .d1{transition-delay:.12s}.js .d2{transition-delay:.24s}
 @media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
+  *,::before,::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
+  .term .ln,.term .cur{opacity:1}
 }
 </style>
 </head>
@@ -178,19 +181,19 @@ footer a:hover{color:var(--em)}
     </div>
     <div class="grid3">
       <div class="cell reveal">
-        <div class="ic">◇</div>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2l7 7-7 7-7-7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
         <h3>Website Design</h3>
         <p>Custom, hand-coded, brutally fast. Designed around one job: turning visits into calls. Maintained monthly so it never rots.</p>
         <a class="more" href="#">Explore builds →</a>
       </div>
       <div class="cell reveal d1">
-        <div class="ic">▲</div>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3l7 12H2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
         <h3>LSA Ads</h3>
         <p>Google Local Services Ads, managed end to end — verification, the Google Guaranteed badge, budgets, and lead disputes.</p>
         <a class="more" href="#">Explore ads →</a>
       </div>
       <div class="cell reveal d2">
-        <div class="ic">✦</div>
+        <div class="ic"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2c.9 3.9 3.1 6.1 7 7-3.9.9-6.1 3.1-7 7-.9-3.9-3.1-6.1-7-7 3.9-.9 6.1-3.1 7-7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
         <h3>Apps &amp; AI Agents</h3>
         <p>Instant-quote estimators, after-hours AI answering, automated follow-up. Custom software scoped to your actual workflow.</p>
         <a class="more" href="#">Explore agents →</a>
@@ -200,7 +203,7 @@ footer a:hover{color:var(--em)}
 </section>
 
 <section class="deep">
-  <div class="wrap deep">
+  <div class="wrap">
     <div class="row reveal">
       <div class="txt">
         <span class="chip">01 · Build</span>

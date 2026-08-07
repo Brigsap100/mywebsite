@@ -20,9 +20,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--moss-deep);outline-offset:3px;border-radius:6px}
+::selection{background:var(--sage);color:var(--ink)}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.01em}
-h2{font-size:clamp(28px,3.8vw,40px);line-height:1.15}
+h2{font-size:clamp(28px,3.8vw,40px);line-height:1.15;text-wrap:balance}
 .lbl{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
 .rule{border:0;border-top:1px solid var(--line)}
 
@@ -43,7 +45,8 @@ header{position:sticky;top:0;z-index:50;background:#faf9f5e6;backdrop-filter:blu
 /* hero — editorial, left-aligned, serif display */
 .hero{padding:100px 0 80px}
 .hero h1{font-size:clamp(42px,6.2vw,66px);line-height:1.06;max-width:18ch}
-.hero h1 em{font-style:italic;color:var(--moss)}
+.hero h1 em{font-style:italic;color:var(--moss);background:linear-gradient(currentColor,currentColor) no-repeat 0 94%/0% 2px;animation:ink .8s 1.2s ease both}
+@keyframes ink{to{background-size:100% 2px}}
 .hero p{margin:26px 0 34px;font-size:18px;color:var(--dim);max-width:54ch}
 .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
 .hero .note{margin-top:56px;display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--dim)}
@@ -66,8 +69,8 @@ header{position:sticky;top:0;z-index:50;background:#faf9f5e6;backdrop-filter:blu
 .item .side li::before{content:"— ";color:var(--cactus)}
 .tagrow{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .tag{font-size:12px;font-weight:500;padding:4px 12px;border-radius:999px;background:var(--sage);color:var(--moss-deep)}
-.tag.olv{background:#ecebda;color:#6a6f42}
-.tag.kft{background:#efe8db;color:#7a6a4f}
+.tag.olv{background:#ecebda;color:#565b33}
+.tag.kft{background:#efe8db;color:#665741}
 
 /* essay/beliefs section */
 .essay{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 0}
@@ -109,8 +112,9 @@ footer a:hover{color:var(--moss-deep)}
 .js .reveal.in{opacity:1;transform:none}
 .js .d1{transition-delay:.15s}.js .d2{transition-delay:.3s}.js .d3{transition-delay:.45s}
 @media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
+  *,::before,::after{animation:none!important;transition:none!important}
   .js .reveal{opacity:1;transform:none}
+  .hero h1 em{background-size:100% 2px}
 }
 </style>
 </head>
