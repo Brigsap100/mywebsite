@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing — Key Web Design</title>
+<meta name="description" content="Simple tiers for local service businesses: the site, the site plus LSA ads, or the full stack with an AI agent. Real quote after one call.">
+<link rel="canonical" href="https://brigsap100.github.io/mywebsite/designs/site/pricing.html">
+<meta property="og:title" content="Pricing — Key Web Design">
+<meta property="og:description" content="Simple rates. No weeds. Start with the site and add the rest whenever.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brigsap100.github.io/mywebsite/designs/site/pricing.html">
+<meta name="theme-color" content="#fdfef8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M2 32C2 15.4 15.4 2 32 2c16.6 0 30 13.4 30 30 0 16.6-13.4 30-30 30H8a6 6 0 0 1-6-6V32z' fill='%231f7544'/%3E%3Ctext x='32' y='43' font-family='system-ui,sans-serif' font-size='30' font-weight='800' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.band{background:var(--soft);padding:50px 0 80px}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tier{background:#fff;border-radius:var(--r);padding:34px 28px;box-shadow:0 14px 34px -22px #21744740;display:flex;flex-direction:column}
+.tier.mid{border:2px solid var(--sun);background:#fffdf7}
+.tier h2{font-size:21px}
+.tier .price{margin:12px 0 4px;font-size:15px}
+.tier .fit{margin-top:auto;padding-top:18px;font-size:14px;font-weight:600;color:var(--deep)}
+.tier .btn{margin-top:16px;text-align:center}
+.tier .note{font-size:13px;color:var(--dim);margin-top:10px}
+.startline{text-align:center;color:var(--dim);font-size:15px;margin-top:36px}
+@media(max-width:880px){.tiers{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- KWD-NAV:BEGIN (shared header — edit here, then stamp into all designs/site pages; move aria-current per page) -->
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><i>K</i>Key Web Design</a>
+    <nav class="links" aria-label="Primary">
+      <ul>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <details class="mnav">
+      <summary>Menu</summary>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </details>
+    <a class="btn" href="contact.html">Start a project</a>
+  </div>
+</header>
+<!-- KWD-NAV:END -->
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="blob"></div>
+  <div class="wrap">
+    <span class="k">Pricing</span>
+    <h1>Simple rates. <em>No weeds.</em></h1>
+    <p>Key Web Design builds sites, runs LSA ads, and trains AI agents for local service businesses. Here's how the money works.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,45 L1440,70 L0,70 Z" fill="#eef7e6"/></svg>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="tiers">
+      <div class="tier reveal">
+        <h2>Site</h2>
+        <p class="price"><span class="ph">[confirm price]</span> build · <span class="ph">[confirm price]</span>/mo care plan</p>
+        <ul class="leaflist">
+          <li>Custom design, copy &amp; build</li>
+          <li>Hosting and launch handled</li>
+          <li>Care plan: unlimited small edits, updates, and we keep it working <span class="ph">[confirm inclusions]</span></li>
+        </ul>
+        <p class="fit">For businesses that need their storefront first.</p>
+        <a class="btn" href="contact.html">Start a project</a>
+      </div>
+      <div class="tier mid reveal d1">
+        <h2>Site + Ads</h2>
+        <p class="price">Site tier + <span class="ph">[confirm price]</span>/mo ads management</p>
+        <ul class="leaflist">
+          <li>Everything in Site</li>
+          <li>LSA setup, verification &amp; weekly management</li>
+        </ul>
+        <p class="note">Your ad spend goes to Google, per lead — separate from the management fee.</p>
+        <p class="fit">For businesses ready to grow the lead flow.</p>
+        <a class="btn" href="contact.html">Start a project</a>
+      </div>
+      <div class="tier reveal d2">
+        <h2>Full Stack</h2>
+        <p class="price">Site + Ads + <span class="ph">[confirm price]</span>/mo AI agent</p>
+        <ul class="leaflist">
+          <li>Everything in Site + Ads</li>
+          <li>Your AI agent, trained and tended</li>
+        </ul>
+        <p class="fit">For businesses that never want to miss another call.</p>
+        <a class="btn" href="contact.html">Start a project</a>
+      </div>
+    </div>
+    <p class="startline reveal">You can start with just the site and add the rest whenever.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- KWD-FOOTER:BEGIN (shared footer — edit here, then stamp into all designs/site pages) -->
+<footer>
+  <div class="wrap">
+    <span>© 2026 Key Web Design · <a href="mailto:brigham@saptron.com">brigham@saptron.com</a></span>
+    <ul>
+      <li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- KWD-FOOTER:END -->
+
+<script src="site.js" defer></script>
+</body>
+</html>

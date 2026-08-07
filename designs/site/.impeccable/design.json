@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-06T00:00:00Z",
+  "title": "Design System: Key Web Design — Studio Site (9C · Citrus)",
+  "extensions": {
+    "colorMeta": {
+      "cream-paper": { "role": "neutral", "displayName": "Cream Paper", "canonical": "#fdfef8", "tonalRamp": ["oklch(20% 0.02 110)", "oklch(32% 0.03 110)", "oklch(45% 0.03 110)", "oklch(58% 0.03 110)", "oklch(70% 0.03 110)", "oklch(82% 0.03 110)", "oklch(92% 0.02 110)", "oklch(99% 0.01 110)"] },
+      "garden-ink": { "role": "neutral", "displayName": "Garden Ink", "canonical": "#22301b", "tonalRamp": ["oklch(15% 0.04 140)", "oklch(26% 0.05 140)", "oklch(38% 0.05 140)", "oklch(50% 0.05 140)", "oklch(62% 0.05 140)", "oklch(74% 0.04 140)", "oklch(86% 0.03 140)", "oklch(95% 0.02 140)"] },
+      "moss-dim": { "role": "neutral", "displayName": "Moss Dim", "canonical": "#5d6f52", "tonalRamp": ["oklch(18% 0.04 135)", "oklch(30% 0.05 135)", "oklch(42% 0.05 135)", "oklch(52% 0.05 135)", "oklch(64% 0.05 135)", "oklch(76% 0.04 135)", "oklch(87% 0.03 135)", "oklch(95% 0.02 135)"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#eaeedb", "tonalRamp": ["oklch(20% 0.03 115)", "oklch(34% 0.04 115)", "oklch(48% 0.04 115)", "oklch(62% 0.04 115)", "oklch(74% 0.04 115)", "oklch(84% 0.03 115)", "oklch(92% 0.03 115)", "oklch(97% 0.02 115)"] },
+      "fresh-green": { "role": "primary", "displayName": "Fresh Green", "canonical": "#3aa864", "tonalRamp": ["oklch(18% 0.08 152)", "oklch(30% 0.11 152)", "oklch(42% 0.13 152)", "oklch(54% 0.14 152)", "oklch(64% 0.14 152)", "oklch(75% 0.12 152)", "oklch(86% 0.09 152)", "oklch(95% 0.05 152)"] },
+      "deep-fern": { "role": "primary", "displayName": "Deep Fern", "canonical": "#217447", "tonalRamp": ["oklch(16% 0.07 155)", "oklch(27% 0.09 155)", "oklch(38% 0.11 155)", "oklch(48% 0.11 155)", "oklch(60% 0.11 155)", "oklch(72% 0.10 155)", "oklch(84% 0.08 155)", "oklch(94% 0.04 155)"] },
+      "button-green": { "role": "primary", "displayName": "Button Green", "canonical": "#1f7544", "tonalRamp": ["oklch(15% 0.07 154)", "oklch(26% 0.09 154)", "oklch(37% 0.11 154)", "oklch(48% 0.11 154)", "oklch(60% 0.11 154)", "oklch(72% 0.10 154)", "oklch(84% 0.08 154)", "oklch(94% 0.04 154)"] },
+      "button-green-deep": { "role": "primary", "displayName": "Button Green Deep", "canonical": "#185c36", "tonalRamp": ["oklch(14% 0.06 154)", "oklch(24% 0.08 154)", "oklch(34% 0.10 154)", "oklch(44% 0.10 154)", "oklch(56% 0.10 154)", "oklch(68% 0.09 154)", "oklch(82% 0.07 154)", "oklch(93% 0.04 154)"] },
+      "seedling-mist": { "role": "tertiary", "displayName": "Seedling Mist", "canonical": "#eef7e6", "tonalRamp": ["oklch(20% 0.04 135)", "oklch(34% 0.06 135)", "oklch(48% 0.07 135)", "oklch(62% 0.07 135)", "oklch(74% 0.07 135)", "oklch(85% 0.06 135)", "oklch(93% 0.04 135)", "oklch(97% 0.02 135)"] },
+      "new-leaf": { "role": "tertiary", "displayName": "New Leaf", "canonical": "#daf0d3", "tonalRamp": ["oklch(20% 0.05 140)", "oklch(34% 0.07 140)", "oklch(48% 0.09 140)", "oklch(62% 0.09 140)", "oklch(74% 0.08 140)", "oklch(84% 0.07 140)", "oklch(92% 0.05 140)", "oklch(97% 0.03 140)"] },
+      "citrus-sun": { "role": "secondary", "displayName": "Citrus Sun", "canonical": "#ffd9a8", "tonalRamp": ["oklch(22% 0.06 70)", "oklch(36% 0.09 70)", "oklch(50% 0.11 70)", "oklch(64% 0.12 70)", "oklch(76% 0.11 70)", "oklch(87% 0.09 70)", "oklch(93% 0.06 70)", "oklch(97% 0.03 70)"] },
+      "clay-error": { "role": "error", "displayName": "Clay Error", "canonical": "#a83c26", "tonalRamp": ["oklch(18% 0.08 35)", "oklch(30% 0.11 35)", "oklch(42% 0.13 35)", "oklch(52% 0.14 35)", "oklch(64% 0.13 35)", "oklch(76% 0.10 35)", "oklch(87% 0.07 35)", "oklch(95% 0.03 35)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home hero h1 only; interior pages use the compact variant clamp(32px,4.6vw,52px) / 1.08." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2s; text-wrap: balance; one em phrase gets the leaf highlight." },
+      "title": { "displayName": "Title", "purpose": "Card/petal h3s (19–21px across variants)." },
+      "body": { "displayName": "Body", "purpose": "Default copy at 1.65; card copy steps to 14.5px in Moss Dim; hero leads 17–18px, max 52–56ch." },
+      "label": { "displayName": "Label / Kicker", "purpose": "The .k kicker pill (13px/700) and small UI labels; nav links 14.5px/600." }
+    },
+    "shadows": [
+      { "name": "petal-rest", "value": "0 14px 34px -22px #21744740", "purpose": "Cards (petals, tiers, form card) at rest — green-tinted, never gray." },
+      { "name": "petal-lift", "value": "0 24px 44px -20px #21744755", "purpose": "Card hover, paired with translateY(-6px) rotate(-0.5deg)." },
+      { "name": "button-glow", "value": "0 8px 20px -10px #3aa86499", "purpose": "Primary buttons only; soft buttons are shadowless." },
+      { "name": "menu-float", "value": "0 18px 44px -24px #21744766", "purpose": "Mobile <details> dropdown panel." }
+    ],
+    "motion": [
+      { "name": "ease-garden", "value": "cubic-bezier(.2,.7,.2,1)", "purpose": "Reveal transforms and the em-highlight grow." },
+      { "name": "up", "value": "opacity 0→1, translateY(24px)→0, 0.7–0.8s ease, staggered 0.1–0.34s", "purpose": "Hero entrance stagger (kicker → h1 → p → CTAs)." },
+      { "name": "reveal", "value": "opacity .7s ease, transform .7s ease-garden, 22px rise; .d1/.d2/.d3 add +0.13s each", "purpose": "Scroll-in via IntersectionObserver; gated behind html.js." },
+      { "name": "morph", "value": "border-radius + rotate keyframes, 14–16s ease-in-out infinite alternate", "purpose": "Ambient blob morphing in heroes and the bowl CTA." },
+      { "name": "reduced-motion", "value": "@media (prefers-reduced-motion: reduce) { *, ::before, ::after { animation: none; transition: none } }", "purpose": "Kill switch covering pseudo-elements; .reveal content force-shown." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "880px", "purpose": "Single breakpoint: nav collapses to <details> menu, all card grids go one column." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one CTA — green capsule, almost always reading 'Start a project'.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Start a project</a>",
+      "css": ".ds-btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--btn,#1f7544);color:#fff;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:15px;text-decoration:none;transition:.18s;box-shadow:0 8px 20px -10px #3aa86499;border:0;cursor:pointer}.ds-btn:hover{background:var(--btn-hi,#185c36);transform:translateY(-2px)}.ds-btn:focus-visible{outline:2px solid #217447;outline-offset:3px;border-radius:999px}"
+    },
+    {
+      "name": "Soft Button",
+      "kind": "button",
+      "refersTo": "button-soft",
+      "description": "Secondary action — mist capsule, deep-fern text, shadowless.",
+      "html": "<a class=\"ds-btn-soft\" href=\"#\">brigham@saptron.com</a>",
+      "css": ".ds-btn-soft{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--soft,#eef7e6);color:var(--deep,#217447);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;font-size:15px;text-decoration:none;transition:.18s;border:0;cursor:pointer}.ds-btn-soft:hover{background:var(--leaf,#daf0d3);transform:translateY(-2px)}.ds-btn-soft:focus-visible{outline:2px solid #217447;outline-offset:3px}"
+    },
+    {
+      "name": "Kicker Pill",
+      "kind": "chip",
+      "refersTo": "kicker",
+      "description": "Topic pill that opens every hero and section, before the heading.",
+      "html": "<span class=\"ds-k\">Websites · LSA Ads · AI Agents</span>",
+      "css": ".ds-k{display:inline-block;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:13px;font-weight:700;color:var(--btn,#1f7544);background:var(--soft,#eef7e6);border-radius:999px;padding:7px 16px}"
+    },
+    {
+      "name": "Petal Card",
+      "kind": "card",
+      "refersTo": "card-petal",
+      "description": "The workhorse card: white 32px-radius petal with blob-cornered drawn-icon chip, number badge, and green-tinted shadow that lifts-and-tilts on hover.",
+      "html": "<a class=\"ds-petal\" href=\"#\"><span class=\"ds-petal-num\">01</span><span class=\"ds-petal-ic\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 20 20\" aria-hidden=\"true\" fill=\"none\" stroke=\"#22301b\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M16.5 3.5C9 3.5 4 8.5 4 16c7.5 0 12.5-5 12.5-12.5z\"/><path d=\"M5.5 14.5C8 11.5 11 8.5 14 6\"/></svg></span><h3 class=\"ds-petal-h\">Website Design</h3><p class=\"ds-petal-p\">Hand-coded pages, written for the way your neighbors actually search.</p></a>",
+      "css": ".ds-petal{display:block;position:relative;background:#fff;border-radius:32px;padding:34px 28px;box-shadow:0 14px 34px -22px #21744740;transition:.2s;text-decoration:none;color:#22301b;font-family:'Plus Jakarta Sans',system-ui,sans-serif;max-width:320px}.ds-petal:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 24px 44px -20px #21744755}.ds-petal-num{position:absolute;top:24px;right:26px;font-weight:800;color:#3d9c5e;font-size:26px}.ds-petal-ic{width:52px;height:52px;border-radius:50% 50% 50% 8px;display:grid;place-items:center;margin-bottom:20px;background:var(--leaf,#daf0d3)}.ds-petal-h{font-size:20px;font-weight:800;margin:0 0 10px}.ds-petal-p{font-size:14.5px;color:var(--dim,#5d6f52);margin:0;line-height:1.65}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Labeled input with hairline border, deep-fern focus outline, and clay error state.",
+      "html": "<div class=\"ds-field\"><label for=\"ds-f-email\">Email</label><input id=\"ds-f-email\" type=\"email\" required><span class=\"ds-err\">Please add a valid email so I can reply.</span></div>",
+      "css": ".ds-field{display:grid;gap:6px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;text-align:left;max-width:340px}.ds-field label{font-weight:700;font-size:14px;color:#22301b}.ds-field input{font:inherit;padding:12px 16px;border:1.5px solid var(--line,#eaeedb);border-radius:16px;background:#fff;color:#22301b;width:100%}.ds-field input:focus-visible{outline:2px solid #217447;outline-offset:2px}.ds-field.error input{border-color:#a83c26}.ds-err{display:none;font-size:13px;font-weight:600;color:#a83c26}.ds-field.error .ds-err{display:block}"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "kicker",
+      "description": "Header links: moss at rest, deep fern on hover, new-leaf underline on the current page.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Work</a><a href=\"#\" aria-current=\"page\">Services</a><a href=\"#\">Pricing</a></nav>",
+      "css": ".ds-nav{display:flex;gap:26px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;font-weight:600;color:var(--dim,#5d6f52)}.ds-nav a{color:inherit;text-decoration:none;transition:.15s;padding-bottom:3px}.ds-nav a:hover{color:var(--deep,#217447)}.ds-nav a[aria-current=\"page\"]{color:var(--deep,#217447);background:linear-gradient(var(--leaf,#daf0d3),var(--leaf,#daf0d3)) no-repeat left bottom/100% .35em}.ds-nav a:focus-visible{outline:2px solid #217447;outline-offset:3px;border-radius:10px}"
+    },
+    {
+      "name": "Leaf List",
+      "kind": "custom",
+      "refersTo": "card-petal",
+      "description": "Bulleted list whose bullets are literal 12px leaf shapes (CSS mask) in Fresh Green.",
+      "html": "<ul class=\"ds-leaflist\"><li>Custom design, copy &amp; build</li><li>Hosting and launch handled</li><li>We keep it working</li></ul>",
+      "css": ".ds-leaflist{list-style:none;margin:0;padding:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14px;color:var(--dim,#5d6f52);display:grid;gap:8px}.ds-leaflist li::before{content:\"\";display:inline-block;width:12px;height:12px;margin-right:9px;background:var(--green,#3aa864);-webkit-mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M15 3C7.5 3 3 7.5 3 15c7.5 0 12-4.5 12-12z'/%3E%3C/svg%3E\") center/contain no-repeat;mask:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M15 3C7.5 3 3 7.5 3 15c7.5 0 12-4.5 12-12z'/%3E%3C/svg%3E\") center/contain no-repeat}"
+    },
+    {
+      "name": "Bowl CTA",
+      "kind": "custom",
+      "refersTo": "button-primary",
+      "description": "The closing move: 44px-radius green-gradient panel with translucent morphing blobs and an inverted white button.",
+      "html": "<div class=\"ds-bowl\"><h2>Let's grow something that works while you rest.</h2><p>One friendly call — no strings attached.</p><a class=\"ds-bowl-btn\" href=\"#\">Start a project</a></div>",
+      "css": ".ds-bowl{background:linear-gradient(135deg,#3aa864,#217447);border-radius:44px;color:#fff;text-align:center;padding:66px 36px;position:relative;overflow:hidden;font-family:'Plus Jakarta Sans',system-ui,sans-serif}.ds-bowl::before{content:\"\";position:absolute;width:240px;height:240px;right:-70px;top:-90px;border-radius:46% 54% 60% 40%/50% 44% 56% 50%;background:#ffffff14}.ds-bowl h2{margin:0;font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.15;position:relative}.ds-bowl p{color:#dcf4de;margin:14px 0 30px;position:relative}.ds-bowl-btn{display:inline-block;padding:13px 26px;border-radius:999px;background:#fff;color:#217447;font-weight:700;font-size:15px;text-decoration:none;transition:.18s;position:relative}.ds-bowl-btn:hover{transform:translateY(-2px)}"
+    },
+    {
+      "name": "Visible Placeholder",
+      "kind": "custom",
+      "refersTo": "kicker",
+      "description": "The .ph honesty token: unconfirmed facts wear a dashed citrus underline so filler never reads as fact.",
+      "html": "<p class=\"ds-ph-line\">Build price: <span class=\"ds-ph\">[confirm price]</span></p>",
+      "css": ".ds-ph-line{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:15px;color:#22301b}.ds-ph{border-bottom:2px dashed var(--sun,#ffd9a8);background:#fffdf7;padding:0 4px;border-radius:4px;font-weight:700;color:#8a5a2b}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Tended Garden",
+    "overview": "The site tells one story — one studio grows the whole lead funnel (site → ads → AI agent) — as a garden, and the visual world is grown accordingly: warm cream paper, living greens, one citrus accent, and organic geometry everywhere a rectangle would be expected. Blobs morph slowly behind heroes, section handoffs are drawn as waves rather than hard edges, cards are soft petals, bullets are leaf-shaped, and icons are hand-drawn single-stroke sketches. It explicitly refuses the agency-template scaffold: no hero stat rows, no testimonial walls, no competing CTAs — there is exactly one action ('Start a project') and it is always the same green pill. Density is low and friendly: generous line-height, short measure, a narrow 1080px container, and one typeface (Plus Jakarta Sans) doing all jobs through weight alone. Everything works without JavaScript and goes fully still under prefers-reduced-motion.",
+    "keyCharacteristics": [
+      "Cream #fdfef8 paper with a green-only chromatic voice and one citrus accent (#ffd9a8)",
+      "Organic geometry: morphing blobs, wave section dividers, blob-cornered icon chips, leaf-mask bullets",
+      "One typeface, weight-driven hierarchy (Plus Jakarta Sans 500–800), negative tracking at display sizes",
+      "A single CTA phrase and a single primary button style, repeated rather than varied",
+      "Honesty is a visual device: unconfirmed facts wear the visible .ph placeholder token",
+      "Progressive enhancement as doctrine: JS-off readable, reduced-motion respected down to pseudo-elements"
+    ],
+    "rules": [
+      { "name": "The Green Voice Rule", "body": "Everything chromatic is green except Citrus Sun and Clay Error. New surfaces never introduce a new hue; they pick the right green (Fresh for fills, Deep for green-as-text, Button Green for the action).", "section": "colors" },
+      { "name": "The One Button Rule", "body": "One primary action per view, always the green pill, almost always reading 'Start a project.' Secondary actions use .btn.soft or the .more text link — never a second loud button.", "section": "colors" },
+      { "name": "The Visible Placeholder Rule", "body": "Any unconfirmed business fact (price, scope, stat) is wrapped in .ph — dashed Citrus Sun underline, #fffdf7 fill, #8a5a2b text — so filler is visibly filler. Never style a .ph value to look confirmed; never remove the token without the owner supplying the real value.", "section": "colors" },
+      { "name": "The Leaf Highlight Rule", "body": "Emphasis inside h1/h2 is an <em> — never italic, rendered Deep Fern with a New Leaf swipe (animated scaleX grow on the home hero). One em phrase per heading, usually the last two words.", "section": "typography" },
+      { "name": "The Kicker Pill Rule", "body": "Every hero and major section opens with a .k pill naming its topic before the heading. On Seedling Mist backgrounds the pill flips to white fill so it stays legible.", "section": "typography" },
+      { "name": "The Green Shadow Rule", "body": "Shadows are always a green tint (#217447 or #3aa864 at ≤50% alpha, negative spread). A neutral gray shadow is off-world.", "section": "elevation" },
+      { "name": "The Blob Corner Rule", "body": "The three-round-one-small corner is the brand's silhouette. Use it for icon chips and marks; don't flatten it to a plain circle or square.", "section": "shapes" },
+      { "name": "The Kill Switch Rule", "body": "prefers-reduced-motion: reduce sets animation: none and transition: none on *, ::before, ::after — pseudo-element blobs included — and force-shows .reveal content. Any new animation must die under this query with no further work.", "section": "components" }
+    ],
+    "dos": [
+      "Do open every hero/section with a .k kicker pill and highlight one heading phrase with the em leaf swipe.",
+      "Do end every hero with a wave divider whose fill exactly matches the next section's background (#eef7e6 today).",
+      "Do draw new icons as inline 1.6-stroke round-capped Garden Ink SVGs inside 52px blob-cornered chips; illustrations stay in-palette line art.",
+      "Do wrap every unconfirmed price, scope, or stat in .ph — filler must look like filler.",
+      "Do edit shared chrome inside the KWD-NAV/KWD-FOOTER stamp comments and re-stamp it to all seven pages, moving aria-current per page.",
+      "Do keep new shared rules in site.css only when used on 2+ pages; single-page styles belong in that page's <style>."
+    ],
+    "donts": [
+      "Don't introduce a new hue: no blues, purples, or grays-as-color; the world is greens + Citrus Sun + Clay Error on cream.",
+      "Don't add a second competing CTA style or phrase — one green capsule, 'Start a project.'",
+      "Don't use gray/black shadows, hard offset shadows, sharp corners, or plain-circle icon chips; shadows are green-tinted, corners are capsules/32px/blob-corners.",
+      "Don't use italics — emphasis is the leaf highlight — and don't use glyph/icon-font icons or stock imagery.",
+      "Don't ship anything that breaks without JS (reveals must ride the html.js gate; interactive chrome needs a native fallback) or that keeps moving under prefers-reduced-motion.",
+      "Don't present filler numbers or client names as fact anywhere; client names live only in the unlisted casebook.html.",
+      "Don't extend this system to the other designs/*.html concepts or the repo root — they are separate worlds by design."
+    ]
+  }
+}

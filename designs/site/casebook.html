@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Work — Key Web Design</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#fdfef8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M2 32C2 15.4 15.4 2 32 2c16.6 0 30 13.4 30 30 0 16.6-13.4 30-30 30H8a6 6 0 0 1-6-6V32z' fill='%231f7544'/%3E%3Ctext x='32' y='43' font-family='system-ui,sans-serif' font-size='30' font-weight='800' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+/* This page is deliberately unlisted: noindex, linked from nowhere, no site nav
+   (a prospect on a screen-share shouldn't wander off mid-call). Not a secret —
+   just out of the public paths. */
+.banner{background:#fffdf7;border-bottom:2px solid var(--sun);padding:10px 0;font-size:13.5px;font-weight:600;color:#8a5a2b;text-align:center}
+.jump{position:sticky;top:0;z-index:50;background:#fdfef8e8;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.jump .wrap{display:flex;align-items:center;gap:18px;height:60px;overflow-x:auto}
+.jump .logo{flex-shrink:0}
+.jump a.j{font-size:13.5px;font-weight:700;color:var(--dim);white-space:nowrap;padding:7px 14px;border-radius:999px}
+.jump a.j:hover{background:var(--soft);color:var(--deep)}
+.proj{min-height:88vh;display:grid;align-content:center;padding:56px 0;border-bottom:1px solid var(--line);scroll-margin-top:70px}
+.proj .trade{font-size:14px;font-weight:700;color:var(--deep)}
+.proj h2{font-size:clamp(28px,4vw,44px);margin-top:6px}
+.shot{margin:26px 0;border-radius:24px;background:var(--soft);aspect-ratio:16/8;display:grid;place-items:center;box-shadow:0 14px 34px -22px #21744740}
+.proj .open{margin-top:8px}
+.endnote{padding:40px 0 60px;text-align:center;color:var(--dim);font-size:14px}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner">Internal casebook — shared live on calls, not linked publicly.</div>
+<div class="jump">
+  <div class="wrap">
+    <a class="logo" href="#"><i>K</i>Key Web Design</a>
+    <a class="j" href="#kodiak">Kodiak Roofing</a>
+    <a class="j" href="#jhansen">JHansen Cleaning</a>
+    <a class="j" href="#anglers">Alaskan Anglers</a>
+    <a class="j" href="#kroofing">Kroofing Estimator</a>
+  </div>
+</div>
+
+<main id="main" class="wrap">
+
+<section class="proj" id="kodiak">
+  <span class="trade">Commercial roofing &amp; waterproofing</span>
+  <h2>Kodiak Roofing &amp; Waterproofing</h2>
+  <div class="shot"><span class="ph">[SCREENSHOT — owner captures live site]</span></div>
+  <ul class="leaflist">
+    <li>Full marketing site, hand-coded — services, careers (EN/ES), lead forms</li>
+    <li>Maintained today under a care plan <span class="ph">[confirm]</span></li>
+    <li><span class="ph">[confirm third talking point]</span></li>
+  </ul>
+  <p class="open"><a class="btn" href="https://brigsap100.github.io/mywebsite/" target="_blank" rel="noopener">Open it →</a></p>
+</section>
+
+<section class="proj" id="jhansen">
+  <span class="trade">Residential cleaning</span>
+  <h2>JHansen Cleaning</h2>
+  <div class="shot"><span class="ph">[SCREENSHOT — owner captures live site]</span></div>
+  <ul class="leaflist">
+    <li>Booking-first site for neighborhood search traffic <span class="ph">[confirm scope]</span></li>
+    <li><span class="ph">[confirm talking points]</span></li>
+  </ul>
+  <p class="open"><a class="btn" href="#" rel="noopener"><span class="ph">[URL — confirm]</span> Open it →</a></p>
+</section>
+
+<section class="proj" id="anglers">
+  <span class="trade">Alaska fishing charter</span>
+  <h2>Alaskan Anglers</h2>
+  <div class="shot"><span class="ph">[SCREENSHOT — owner captures live site]</span></div>
+  <ul class="leaflist">
+    <li>Trip pages and season calendar built for booking inquiries <span class="ph">[confirm scope]</span></li>
+    <li><span class="ph">[confirm talking points]</span></li>
+  </ul>
+  <p class="open"><a class="btn" href="#" rel="noopener"><span class="ph">[URL — confirm]</span> Open it →</a></p>
+</section>
+
+<section class="proj" id="kroofing">
+  <span class="trade">App · Instant-quote estimator</span>
+  <h2>Kroofing Estimator</h2>
+  <div class="shot"><span class="ph">[SCREENSHOT — owner captures app]</span></div>
+  <ul class="leaflist">
+    <li>Homeowner answers a few questions, gets a ballpark roof quote instantly</li>
+    <li>The interactive proof of service 03 — run it live on the call</li>
+    <li><span class="ph">[confirm third talking point]</span></li>
+  </ul>
+  <p class="open"><a class="btn" href="#" rel="noopener"><span class="ph">[URL — confirm]</span> Open the estimator and run a sample roof quote →</a></p>
+</section>
+
+</main>
+
+<div class="endnote">brigham@saptron.com</div>
+
+<script src="site.js" defer></script>
+</body>
+</html>

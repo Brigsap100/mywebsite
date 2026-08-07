@@ -22,6 +22,7 @@ One team, whole stack: Key Web Design builds the website, runs the Google Local 
 
 - Concepts live in `designs/` as fully self-contained single HTML files (inline CSS/JS, Google Fonts only) with a gallery index at `designs/index.html`.
 - Each demo is a main page only: nav links name future pages (Work, Services, Pricing, About, Contact) but are intentionally inert.
+- The studio's public site now lives at `designs/site/` (grown from the 9C · Citrus concept): Home, Work, Services, Pricing, About, Contact sharing `site.css`/`site.js`, with real nav and indexable pages. `casebook.html` there is unlisted (noindex, linked from nowhere) and names real clients for sales calls — the only place client names are approved to appear.
 - Hosted on GitHub Pages from `main` (`brigsap100.github.io/mywebsite/designs/`). The repo root is a legacy Kodiak Roofing site mirror — leave it untouched.
 - Demos are shown on desktop and phones during sales conversations; both must hold up.
 

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Key Web Design</title>
+<meta name="description" content="Tell us about your business. One friendly call — we'll sketch your site, ads, and AI agent, no strings attached.">
+<link rel="canonical" href="https://brigsap100.github.io/mywebsite/designs/site/contact.html">
+<meta property="og:title" content="Contact — Key Web Design">
+<meta property="og:description" content="Tell us about your business. No pitch deck, no pressure.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://brigsap100.github.io/mywebsite/designs/site/contact.html">
+<meta name="theme-color" content="#fdfef8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M2 32C2 15.4 15.4 2 32 2c16.6 0 30 13.4 30 30 0 16.6-13.4 30-30 30H8a6 6 0 0 1-6-6V32z' fill='%231f7544'/%3E%3Ctext x='32' y='43' font-family='system-ui,sans-serif' font-size='30' font-weight='800' fill='%23fff' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<script>document.documentElement.className+=' js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.band{background:var(--soft);padding:50px 0 90px}
+.split{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:start}
+.formcard{background:#fff;border-radius:var(--r);padding:36px 32px;box-shadow:0 14px 34px -22px #21744740}
+.aside{display:grid;gap:18px}
+.aside .card{background:#fff;border-radius:24px;padding:28px}
+.aside h2{font-size:19px}
+.aside p{font-size:14.5px;color:var(--dim);margin-top:8px}
+.aside .btn{margin-top:16px}
+@media(max-width:880px){.split{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- KWD-NAV:BEGIN (shared header — edit here, then stamp into all designs/site pages; move aria-current per page) -->
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><i>K</i>Key Web Design</a>
+    <nav class="links" aria-label="Primary">
+      <ul>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+    <details class="mnav">
+      <summary>Menu</summary>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </details>
+    <a class="btn" href="contact.html">Start a project</a>
+  </div>
+</header>
+<!-- KWD-NAV:END -->
+
+<main id="main">
+
+<section class="page-hero">
+  <div class="blob"></div>
+  <div class="wrap">
+    <span class="k">Contact</span>
+    <h1>Plant the <em>first seed.</em></h1>
+    <p>Tell me about your business. I'll reply personally — no pitch deck, no pressure.</p>
+  </div>
+  <svg class="wave" viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,45 L1440,70 L0,70 Z" fill="#eef7e6"/></svg>
+</section>
+
+<section class="band">
+  <div class="wrap split">
+    <div class="formcard reveal">
+      <!-- TODO: replace YOUR_FORM_ID with the real Formspree form ID before launch (grep -rn "YOUR_FORM_ID" designs/site/) -->
+      <form data-contact action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <span class="err-msg">Please add your name.</span>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+          <span class="err-msg">Please add a valid email so I can reply.</span>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone <span style="font-weight:500;color:var(--dim)">(optional)</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="field">
+          <label for="f-msg">What do you need?</label>
+          <textarea id="f-msg" name="message" required></textarea>
+          <span class="err-msg">A sentence or two is plenty.</span>
+        </div>
+        <input type="hidden" name="_subject" value="New inquiry — Key Web Design site">
+        <div class="hp" aria-hidden="true"><label>Leave this field empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn" type="submit">Send it</button>
+        <p class="form-status" id="form-status" aria-live="polite"></p>
+      </form>
+      <div class="form-ok" id="form-ok" hidden>
+        <b>Thanks — it's in Brigham's inbox.</b>
+        <p>You'll hear back from a person, not a sequence.</p>
+      </div>
+    </div>
+    <div class="aside">
+      <div class="card reveal d1">
+        <h2>Prefer email?</h2>
+        <p>Skip the form entirely.</p>
+        <a class="btn soft" href="mailto:brigham@saptron.com">brigham@saptron.com</a>
+      </div>
+      <div class="card reveal d2">
+        <h2>What happens next</h2>
+        <ul class="leaflist">
+          <li>I read your note</li>
+          <li>We talk — one friendly call</li>
+          <li>You get a written sketch of what I'd build first</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- KWD-FOOTER:BEGIN (shared footer — edit here, then stamp into all designs/site pages) -->
+<footer>
+  <div class="wrap">
+    <span>© 2026 Key Web Design · <a href="mailto:brigham@saptron.com">brigham@saptron.com</a></span>
+    <ul>
+      <li><a href="work.html">Work</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+<!-- KWD-FOOTER:END -->
+
+<script src="site.js" defer></script>
+</body>
+</html>

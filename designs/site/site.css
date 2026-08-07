@@ -1,0 +1,151 @@
+/* ============================================================
+   Key Web Design — shared design system (9C · Citrus world)
+   Extracted from designs/layout-9c.html. Everything here is used
+   on 2+ pages; single-page styles live in that page's <style>.
+   ============================================================ */
+
+/* === tokens === */
+:root{
+  --bg:#fdfef8; --ink:#22301b; --dim:#5d6f52; --line:#eaeedb;
+  --green:#3aa864; --deep:#217447; --soft:#eef7e6; --sun:#ffd9a8; --leaf:#daf0d3;
+  --btn:#1f7544; --btn-hi:#185c36; --err:#a83c26;
+  --r:32px;
+}
+
+/* === base === */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--deep);outline-offset:3px;border-radius:10px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+h1,h2{text-wrap:balance}
+h2{font-size:clamp(27px,3.6vw,38px);font-weight:800;letter-spacing:-.02em;line-height:1.15}
+h1 em,h2 em{font-style:normal;color:var(--deep);position:relative}
+h1 em::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:.32em;background:var(--leaf);z-index:-1;border-radius:6px;transform-origin:left;animation:grow .6s 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}}
+.k{display:inline-block;font-size:13px;font-weight:700;color:var(--btn);background:var(--soft);border-radius:999px;padding:7px 16px}
+
+/* visible placeholder token — unconfirmed facts the owner must replace */
+.ph{border-bottom:2px dashed var(--sun);background:#fffdf7;padding:0 4px;border-radius:4px;font-weight:700;color:#8a5a2b}
+
+/* === skip link === */
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--deep);color:#fff;padding:10px 18px;border-radius:0 0 14px 0;font-weight:700}
+.skip:focus{left:0}
+
+/* === header / nav === */
+header{position:sticky;top:0;z-index:50;background:#fdfef8e8;backdrop-filter:blur(10px)}
+.nav{display:flex;align-items:center;gap:28px;height:72px}
+.logo{font-weight:800;font-size:17px;display:flex;align-items:center;gap:10px}
+.logo i{width:34px;height:34px;border-radius:50% 50% 50% 6px;background:var(--btn);color:#fff;display:grid;place-items:center;font-style:normal;font-size:15px;font-weight:800}
+.links ul{display:flex;gap:26px;list-style:none;font-size:14.5px;font-weight:600;color:var(--dim)}
+.links a{transition:.15s;padding-bottom:3px}
+.links a:hover{color:var(--deep)}
+.links a[aria-current="page"]{color:var(--deep);background:linear-gradient(var(--leaf),var(--leaf)) no-repeat left bottom/100% .35em}
+.nav .btn{margin-left:auto;padding:10px 20px}
+
+/* mobile menu — <details> so it works without JS */
+.mnav{display:none;position:relative;margin-left:auto}
+.mnav summary{list-style:none;cursor:pointer;font-weight:700;font-size:14.5px;color:var(--deep);padding:9px 18px;border-radius:999px;background:var(--soft)}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{background:var(--leaf)}
+.mnav ul{position:absolute;right:0;top:calc(100% + 10px);background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 44px -24px #21744766;padding:10px;display:grid;gap:2px;min-width:190px;list-style:none;z-index:60}
+.mnav ul a{display:block;padding:10px 14px;border-radius:12px;font-weight:600}
+.mnav ul a:hover{background:var(--soft);color:var(--deep)}
+.mnav ul a[aria-current="page"]{color:var(--deep);background:var(--soft)}
+
+/* === buttons === */
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;background:var(--btn);color:#fff;font-weight:700;font-size:15px;transition:.18s;box-shadow:0 8px 20px -10px #3aa86499;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--btn-hi);transform:translateY(-2px)}
+.btn.soft{background:var(--soft);color:var(--deep);box-shadow:none}
+.btn.soft:hover{background:var(--leaf)}
+
+/* === heroes === */
+.hero{padding:84px 0 40px;position:relative;overflow:hidden;text-align:center}
+.hero .blob{position:absolute;border-radius:46% 54% 60% 40%/50% 44% 56% 50%;filter:blur(2px);animation:morph 14s ease-in-out infinite alternate;z-index:0}
+.hero .b1{width:420px;height:420px;background:var(--leaf);left:-140px;top:-80px}
+.hero .b2{width:360px;height:360px;background:var(--sun);right:-120px;top:120px;animation-delay:-6s}
+@keyframes morph{
+  0%{border-radius:46% 54% 60% 40%/50% 44% 56% 50%;transform:rotate(0)}
+  100%{border-radius:58% 42% 44% 56%/42% 58% 42% 58%;transform:rotate(14deg)}
+}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(38px,5.8vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1.06;max-width:17ch;margin:20px auto 0}
+.hero p{margin:24px auto 34px;font-size:18px;color:var(--dim);max-width:52ch}
+.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* compact interior-page opener */
+.page-hero{padding:64px 0 8px;position:relative;overflow:hidden}
+.page-hero .blob{position:absolute;width:300px;height:300px;border-radius:46% 54% 60% 40%/50% 44% 56% 50%;filter:blur(2px);background:var(--leaf);right:-130px;top:-110px;z-index:0}
+.page-hero .wrap{position:relative;z-index:1}
+.page-hero h1{font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.08;max-width:22ch;margin:16px 0 0}
+.page-hero p{margin:16px 0 0;font-size:17px;color:var(--dim);max-width:56ch}
+
+/* wave divider — inline SVG per page; fill must match next section's bg */
+.wave{display:block;width:100%;height:70px;margin-top:44px}
+
+/* === petal cards + leaf bullets === */
+.petals{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.petals.two{grid-template-columns:1fr 1fr}
+.petal{background:#fff;border-radius:var(--r);padding:34px 28px;box-shadow:0 14px 34px -22px #21744740;transition:.2s;position:relative}
+.petal:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 24px 44px -20px #21744755}
+.petal .ic{width:52px;height:52px;border-radius:50% 50% 50% 8px;display:grid;place-items:center;margin-bottom:20px;background:var(--leaf)}
+.petal h3{font-size:20px;font-weight:800;margin-bottom:10px}
+.petal p{font-size:14.5px;color:var(--dim)}
+.petal .num{position:absolute;top:24px;right:26px;font-weight:800;color:#3d9c5e;font-size:26px}
+.leaflist{list-style:none;margin-top:16px;font-size:14px;color:var(--dim);display:grid;gap:8px}
+.leaflist li::before{content:"";display:inline-block;width:12px;height:12px;margin-right:9px;background:var(--green);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M15 3C7.5 3 3 7.5 3 15c7.5 0 12-4.5 12-12z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M15 3C7.5 3 3 7.5 3 15c7.5 0 12-4.5 12-12z'/%3E%3C/svg%3E") center/contain no-repeat}
+.more{display:inline-block;margin-top:22px;font-weight:700;color:var(--deep)}
+.more:hover{text-decoration:underline}
+
+/* === bowl CTA === */
+.cta{padding:20px 0 100px}
+.bowl{background:linear-gradient(135deg,var(--green),var(--deep));border-radius:44px;color:#fff;text-align:center;padding:66px 36px;position:relative;overflow:hidden}
+.bowl::before,.bowl::after{content:"";position:absolute;border-radius:46% 54% 60% 40%/50% 44% 56% 50%;background:#ffffff14;animation:morph 16s ease-in-out infinite alternate}
+.bowl::before{width:300px;height:300px;left:-90px;bottom:-120px}
+.bowl::after{width:240px;height:240px;right:-70px;top:-90px;animation-delay:-8s}
+.bowl h2{color:#fff;position:relative}
+.bowl p{color:#dcf4de;margin:14px 0 30px;position:relative}
+.bowl .btn{background:#fff;color:var(--deep);position:relative;box-shadow:none}
+
+/* === forms (contact) === */
+.field{display:grid;gap:6px;margin-bottom:16px;text-align:left}
+.field label{font-weight:700;font-size:14px}
+.field input,.field textarea{font:inherit;padding:12px 16px;border:1.5px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);width:100%}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus-visible,.field textarea:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+.field.error input,.field.error textarea{border-color:var(--err)}
+.err-msg{display:none;font-size:13px;font-weight:600;color:var(--err)}
+.field.error .err-msg{display:block}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-status{margin-top:14px;font-weight:600;font-size:14.5px;color:var(--err)}
+.form-status a{text-decoration:underline}
+.form-ok{background:var(--soft);border:1px solid var(--leaf);border-radius:24px;padding:38px 28px;text-align:center}
+.form-ok b{display:block;font-size:20px;margin-bottom:6px}
+.form-ok p{color:var(--dim);font-size:14.5px}
+
+/* === footer === */
+footer{padding:44px 0 50px;text-align:center;font-size:14px;color:var(--dim);border-top:1px solid var(--line);margin-top:60px}
+footer ul{display:flex;gap:22px;list-style:none;justify-content:center;margin-top:10px;flex-wrap:wrap}
+footer a:hover{color:var(--deep)}
+
+/* === motion === */
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hero .k,.page-hero .k{animation:up .7s ease both}
+.hero h1,.page-hero h1{animation:up .8s .1s ease both}
+.hero p,.page-hero p{animation:up .8s .22s ease both}
+.hero .ctas{animation:up .8s .34s ease both}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .d1{transition-delay:.13s}.js .d2{transition-delay:.26s}.js .d3{transition-delay:.39s}
+@media(prefers-reduced-motion:reduce){
+  *,::before,::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+/* === responsive === */
+@media(max-width:880px){
+  .links{display:none}
+  .nav .btn{display:none}
+  .mnav{display:block}
+  .petals,.petals.two{grid-template-columns:1fr}
+}
